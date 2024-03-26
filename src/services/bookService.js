@@ -14,6 +14,18 @@ async function getAllBooks() {
   }
 }
 
+async function getBook(bookId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${bookId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllBooks,
+  getBook,
 }
