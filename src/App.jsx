@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Books from './pages/Books/Books'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -61,6 +62,10 @@ function App() {
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
           }
+        />
+        <Route
+          path="/books"
+          element={<Books user={user} /> }
         />
       </Routes>
     </>
