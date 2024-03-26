@@ -1,5 +1,5 @@
 // services
-// import * as profileService from '../../services/booksService'
+import * as bookService from '../../services/bookService'
 
 // css
 import styles from './Books.module.css'
