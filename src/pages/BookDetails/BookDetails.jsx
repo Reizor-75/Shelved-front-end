@@ -6,20 +6,28 @@ import { useParams } from "react-router-dom";
 import * as bookService from '../../services/bookService'
 
 // css
-import styles from './Books.module.css'
+import styles from './BookDetails.module.css'
 
 const Books = () => {
   const { bookId } = useParams()
-  const [book, setBook] = useState
+  const [book, setBook] = useState()
 
   useEffect(() =>{
-    const fetchWorkshop= async () => {
-      const data = await bookService.showWorkshop(bookId)
+    const fetchBook= async () => {
+      const data = await bookService.getBook(bookId)
       setBook(data)
     }
-    fetchWorkshop()
-  })
+    fetchBook()
+  },[bookId])
   
+  if(!book){
+    return (
+      <>
+        <h1>No Such Book</h1>
+      </>
+    )
+  }
+
   return (  
     <main className={styles.container}>
       <h1>{book.title}</h1>

@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Books from './pages/Books/Books'
+import BookDetails from './pages/BookDetails/BookDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -66,6 +67,10 @@ function App() {
         <Route
           path="/books"
           element={<Books user={user} /> }
+        />
+        <Route
+          path="/books/:bookId"
+          element={<BookDetails user={user} /> }
         />
       </Routes>
     </>
