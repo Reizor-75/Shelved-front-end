@@ -12,6 +12,7 @@ const Books = () => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
 
+  
   useEffect(() =>{
     const fetchBook= async () => {
       const data = await bookService.getBook(bookId)
@@ -28,12 +29,16 @@ const Books = () => {
     )
   }
 
+  const date = new Date(book.firstPublished).getFullYear()
+
   return (  
     <main className={styles.container}>
       <h1>{book.title}</h1>
       <h2>{book.author}</h2>
-      <h2>{book.firstPublished}</h2>
-      <h2>{book.genre}</h2>
+      <h2>{date}</h2>
+      {book.genre.map(singleGenre =>
+        <span key={singleGenre}>{singleGenre} </span>
+        ) }
       <div className={styles.reviewsContainer}>
         <h2>Reviews</h2>
 
