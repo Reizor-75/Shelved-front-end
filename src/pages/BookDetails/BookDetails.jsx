@@ -31,7 +31,18 @@ const Books = () => {
   return (  
     <main className={styles.container}>
       <h1>{book.title}</h1>
-    
+      <h2>{book.author}</h2>
+      <h2>{book.firstPublished}</h2>
+      <h2>{book.genre}</h2>
+      <div className={styles.reviewsContainer}>
+        <h2>Reviews</h2>
+
+        {book.reviews.length ?
+          <>has reviews</>
+          :
+          <h3>No Reviews available</h3>
+        }
+      </div>
     </main>
   );
 }
