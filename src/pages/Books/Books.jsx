@@ -27,9 +27,11 @@ const Books = () => {
   return (  
     <main className={styles.container}>
       <h1>Books</h1>
-      {books.map(book => (
-        <BookCard key={book._id} book={book}/>
-      ))}
+      <div className={styles.cardContainer}>
+        {books.map(book => (
+          <BookCard key={book._id} book={book}/>
+        ))}
+      </div>
     </main>
   );
 }
