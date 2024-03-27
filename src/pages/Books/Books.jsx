@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 // services
 import * as bookService from '../../services/bookService'
 
+import BookCard from '../../components/BookCard/BookCard'
+
 // css
 import styles from './Books.module.css'
 
@@ -26,7 +28,7 @@ const Books = () => {
     <main className={styles.container}>
       <h1>Books</h1>
       {books.map(book => (
-        <p key={book._id}>{book.title} {book._id}</p>
+        <BookCard key={book._id} book={book}/>
       ))}
     </main>
   );
