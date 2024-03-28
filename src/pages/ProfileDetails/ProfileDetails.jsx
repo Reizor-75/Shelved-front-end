@@ -21,6 +21,7 @@ const ProfileDetails = () => {
   },[profileId])
 
   
+
   const handleRemoveRead = async (bookId)=>{
     const data = await profileServices.deleteRead(bookId)
     setProfile(data)
@@ -39,9 +40,12 @@ const ProfileDetails = () => {
   if(!profile)
     return <main className={styles.container}><h1>Loading...</h1></main>
 
+  const date = new Date(profile.createdAt).toLocaleDateString()
+  
   return (  
     <main className={styles.container}>
       <h1>{profile.name}</h1>
+      <h2>Member since {date}</h2>
       <div className={styles.ReadList}>
         <div className={styles.ReadListTitle}>Completed List</div>
           {profile.readList.length ? 
