@@ -39,7 +39,7 @@ const ProfileDetails = () => {
               {profile.readList.map(book =>
                 <div key={book._id}>
                   {book.title}
-                  <button onClick={handleRemoveRead(book._id)}>🗑️</button>
+                  <button onClick={()=>handleRemoveRead(book._id)}>🗑️</button>
                 </div>
               )}
             </>

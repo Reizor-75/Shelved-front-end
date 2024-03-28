@@ -43,8 +43,25 @@ async function getProfile(profileId) {
   }
 }
 
+
+async function deleteRead(bookId){
+  try {
+    const res = await fetch(`${BASE_URL}/readlist/${bookId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllProfiles,
   addPhoto,
   getProfile, 
+  deleteRead,
 }
