@@ -31,6 +31,9 @@ const Books = () => {
 
   const date = new Date(book.firstPublished).getFullYear()
 
+  const handleAddToRead = async ()=>{
+  }
+
   return (  
     <main className={styles.container}>
       <h1>{book.title}</h1>
@@ -47,6 +50,11 @@ const Books = () => {
           :
           <h3>No Reviews available</h3>
         }
+      </div>
+
+      <div className={styles.addToList}>
+        <button onClick={handleAddToRead} className={styles.addToCompleted}>Read</button>
+        <button className={styles.addToWish}>Want</button>
       </div>
     </main>
   );
