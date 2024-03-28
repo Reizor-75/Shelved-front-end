@@ -83,12 +83,9 @@ const Books = ({user}) => {
           <button onClick={handleAddToWish} className={styles.addToWish}><i className="fa-solid fa-heart"></i></button>
         </div>
       </div>
-      
-      {user &&       
+      <div className={styles.reviewContainerHeader}>Reviews</div>         
+      {user && !book.reviews.find(review => review.reviewer._id === user.profile) &&   
         <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.form}>
-          <div className={styles.reviewContainerHeader}>Reviews          
-            <button onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>
-          </div>
           <div className={styles.formHeader}>
             <input
               type="text"
@@ -142,7 +139,8 @@ const Books = ({user}) => {
             name="content"
             onChange={handleChange}
             placeholder='Write Your Review'
-          />         
+          />          
+          <button onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>         
         </form>
       }
       <div className={styles.reviewsContainer}>
