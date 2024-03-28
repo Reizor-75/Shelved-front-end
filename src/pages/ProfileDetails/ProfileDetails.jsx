@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 // services
 import * as profileServices from '../../services/profileService'
@@ -41,7 +41,7 @@ const ProfileDetails = () => {
     return <main className={styles.container}><h1>Loading...</h1></main>
 
   const date = new Date(profile.createdAt).toLocaleDateString()
-  
+
   return (  
     <main className={styles.container}>
       <h1>{profile.name}</h1>
@@ -52,7 +52,7 @@ const ProfileDetails = () => {
             <>
               {profile.readList.map(book =>
                 <div key={book._id}>
-                  {book.title}
+                  <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
                   <button onClick={()=>handleRemoveRead(book._id)}>🗑️</button>
                 </div>
               )}
@@ -66,9 +66,10 @@ const ProfileDetails = () => {
           {profile.wishList.length ? 
             <>
               {profile.wishList.map(book =>
-                <div key={book._id}>{book.title}    
-                <button onClick={()=>handleMoveBook(book._id)}> Move to Completed List </button>            
-                <button onClick={()=>handleRemoveWish(book._id)}>🗑️</button>
+                <div key={book._id}>
+                  <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
+                  <button onClick={()=>handleMoveBook(book._id)}> Move to Completed List </button>            
+                  <button onClick={()=>handleRemoveWish(book._id)}>🗑️</button>
                 </div>
               )}
             </>
