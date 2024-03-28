@@ -20,6 +20,12 @@ const ProfileDetails = () => {
     fetchBook()
   },[profileId])
 
+  
+  const handleRemoveRead = async (bookId)=>{
+    const data = await profileServices.deleteRead(bookId)
+    setProfile(data)
+  }
+
   if(!profile)
     return <main className={styles.container}><h1>Loading...</h1></main>
 
@@ -31,7 +37,10 @@ const ProfileDetails = () => {
           {profile.readList.length ? 
             <>
               {profile.readList.map(book =>
-                <div key={book._id}>{book.title}</div>
+                <div key={book._id}>
+                  {book.title}
+                  <button onClick={handleRemoveRead(book._id)}>🗑️</button>
+                </div>
               )}
             </>
             :
@@ -43,7 +52,7 @@ const ProfileDetails = () => {
           {profile.wishList.length ? 
             <>
               {profile.wishList.map(book =>
-                <div key={book._id}>book.title</div>
+                <div key={book._id}>{book.title}</div>
               )}
             </>
             :
