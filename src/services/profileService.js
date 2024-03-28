@@ -76,7 +76,7 @@ async function deleteWish(bookId){
 
 async function moveBook(bookId){
   try {
-    const res = await fetch(`${BASE_URL}/wishlist/${bookId}/updateLists`, {
+    const res = await fetch(`${BASE_URL}/wishlist/${bookId}/updateList`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,

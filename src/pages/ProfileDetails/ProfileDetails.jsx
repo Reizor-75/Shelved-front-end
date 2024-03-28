@@ -31,6 +31,11 @@ const ProfileDetails = () => {
     setProfile(data)
   }
 
+  const handleMoveBook = async (bookId)=>{
+    const data = await profileServices.moveBook(bookId)
+    setProfile(data)
+  }
+
   if(!profile)
     return <main className={styles.container}><h1>Loading...</h1></main>
 
@@ -58,7 +63,7 @@ const ProfileDetails = () => {
             <>
               {profile.wishList.map(book =>
                 <div key={book._id}>{book.title}    
-                <button> Move to Completed List </button>            
+                <button onClick={()=>handleMoveBook(book._id)}> Move to Completed List </button>            
                 <button onClick={()=>handleRemoveWish(book._id)}>🗑️</button>
                 </div>
               )}
