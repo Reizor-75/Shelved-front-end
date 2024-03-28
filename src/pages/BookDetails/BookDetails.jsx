@@ -8,7 +8,7 @@ import * as bookService from '../../services/bookService'
 // css
 import styles from './BookDetails.module.css'
 
-const Books = () => {
+const Books = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
 
@@ -34,9 +34,14 @@ const Books = () => {
   const handleAddToRead = async ()=>{
     await bookService.addToRead(bookId)
   }
-  
+
   const handleAddToWish = async ()=>{
     await bookService.addToWish(bookId)
+  }
+
+  const handleAddReview= async ()=>{
+    const data = await bookService.addReview(bookId)
+    setBook(data)
   }
 
   return (  
@@ -48,8 +53,11 @@ const Books = () => {
         <span key={singleGenre}>{singleGenre} </span>
         ) }
       <div className={styles.reviewsContainer}>
-        <h2>Reviews</h2>
-
+        <h2>Reviews
+          {user && 
+            <button onClick={handleAddReview}>Write a Review</button>
+          }
+        </h2>
         {book.reviews.length ?
           <>has reviews</>
           :
