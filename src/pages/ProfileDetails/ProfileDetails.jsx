@@ -24,19 +24,28 @@ const ProfileDetails = () => {
     <main className={styles.container}>
       <div className={styles.ReadList}>
         <div className={styles.ReadListTitle}>Completed List</div>
-        {profile.readList.length ? 
-          <>
-          {profile.readList.map(book =>
-            <div key={book._id}>book.title</div>
-            )}
-          </>
-          :
-          <> No Books Available</>
+          {profile.readList.length ? 
+            <>
+              {profile.readList.map(book =>
+                <div key={book._id}>book.title</div>
+              )}
+            </>
+            :
+            <> No Books Available</>
           }
       </div>
       <div className={styles.WishList}>        
-      <div className={styles.WishListTitle}>Wish List</div>
-      </div>
+        <div className={styles.WishListTitle}>Wish List</div>
+          {profile.wishList.length ? 
+            <>
+              {profile.wishList.map(book =>
+                <div key={book._id}>book.title</div>
+              )}
+            </>
+            :
+            <> No Books Available</>
+          }
+        </div>
     </main>
   );
 }
