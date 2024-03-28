@@ -59,9 +59,25 @@ async function deleteRead(bookId){
   }
 }
 
+async function deleteWish(bookId){
+  try {
+    const res = await fetch(`${BASE_URL}/wishlist/${bookId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllProfiles,
   addPhoto,
   getProfile, 
   deleteRead,
+  deleteWish,
 }
