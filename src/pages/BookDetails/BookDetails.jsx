@@ -34,6 +34,9 @@ const Books = () => {
   const handleAddToRead = async ()=>{
     await bookService.addToRead(bookId)
   }
+  const handleAddToWish = async ()=>{
+    await bookService.addToWish(bookId)
+  }
 
   return (  
     <main className={styles.container}>
@@ -54,8 +57,8 @@ const Books = () => {
       </div>
 
       <div className={styles.addToList}>
-        <button onClick={handleAddToRead} className={styles.addToCompleted}>Read</button>
-        <button className={styles.addToWish}>Want</button>
+        <button onClick={handleAddToRead} className={styles.addToCompleted}>Add to Completed List</button>
+        <button onClick={handleAddToWish} className={styles.addToWish}>Add to Wish List</button>
       </div>
     </main>
   );
