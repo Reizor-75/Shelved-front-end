@@ -35,6 +35,16 @@ const Books = ({user}) => {
   }
 
   const date = new Date(book.firstPublished).getFullYear()
+  const renderStars = (numOfStars) =>{
+    const stars = []
+    for(let i =0; i < numOfStars; i++){
+      stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
+    }
+    for(let i = numOfStars; i < 5; i++){
+      stars.push(<i className="fa-solid fa-star "></i>)
+    }
+    return stars;
+  }
 
   const handleAddToRead = async ()=>{
     await bookService.addToRead(bookId)
@@ -112,7 +122,8 @@ const Books = ({user}) => {
             {book.reviews.map(review =>
               <div key={review._id}>
                 <h2> {review.title} 
-                {review.rating}</h2>
+                  { renderStars(review.rating) }
+                </h2>
                 {review.content}
                 {review.reviewer.name}
               </div>
