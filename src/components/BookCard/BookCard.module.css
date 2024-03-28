@@ -1,8 +1,13 @@
 .card{
-  background-color: aliceblue;
+  background-color: white;
   padding: 8px;
   margin: 8px;
   height: 300px;
   width: 200px;
   border-radius: 8px;
+}
+
+a{
+  font-size: var(--font-s);
+  color: var(--main-font);
 }

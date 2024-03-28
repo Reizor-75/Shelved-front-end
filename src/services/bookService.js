@@ -55,9 +55,25 @@ async function addToWish(bookId){
   }
 }
 
+async function addReview(bookId){
+  try {
+    const res = await fetch(`${BASE_URL}/${bookId}/review`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllBooks,
   getBook,
   addToRead,
   addToWish,
+  addReview,
 }
