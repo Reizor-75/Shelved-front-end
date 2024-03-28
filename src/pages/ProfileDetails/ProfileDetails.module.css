@@ -1,0 +1,30 @@
+.listContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.list{
+  width: 48%;
+}
+
+.listTitle{
+  color: var(--main-font);
+  font-size: var(--font-l);
+  font-weight: 600;
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 16px;
+}
+
+.listContent{
+  font-size: var(--font-m);
+  background-color: var(--main-contrast);
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px ;
+}
+
+.book{  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

@@ -15,7 +15,7 @@ const Books = ({user}) => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    rating: 1,
+    rating: 5,
   })
   
   useEffect(() =>{
