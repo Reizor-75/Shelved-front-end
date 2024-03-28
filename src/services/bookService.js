@@ -40,8 +40,24 @@ async function addToRead(bookId){
   }
 }
 
+async function addToWish(bookId){
+  try {
+    const res = await fetch(`${BASE_URL}/${bookId}/wishlist`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllBooks,
   getBook,
   addToRead,
+  addToWish,
 }
