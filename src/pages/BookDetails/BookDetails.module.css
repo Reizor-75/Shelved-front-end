@@ -21,12 +21,18 @@ button{
   }
 }
 
+button:hover{
+  /* color: white; */
+  background-color: var(--background);
+}
+
 .reviewContainerHeader{
   display: flex;
   justify-content: space-between;
   font-size: var(--font-l);
   font-weight: 700;
   margin-top: 24px;
+  padding: 8px;
 }
 
 form{  
@@ -97,10 +103,13 @@ input[type=radio]:checked + label, input[type=radio] ~ label{
   }
 }
 
-.reviewerInfo{  
-  display: flex;    
-  justify-content: right;
+.bottomRow{
+  display: flex;
+  justify-content: space-between;
   align-items: flex-end;
+}
+
+.reviewerInfo{  
   img{
     border-radius: 50%;
     width: 40px;

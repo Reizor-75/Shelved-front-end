@@ -153,9 +153,15 @@ const Books = ({user}) => {
                   <div className={styles.reviewStars}>{renderStars(review.rating)}</div>
                 </div>
                 <div className={styles.reviewContent}>{review.content}</div>
-                <div className={styles.reviewerInfo}>
-                  {review.reviewer.name}
-                  <img src={review.reviewer.photo} alt={`${review.reviewer.name}'s avatar`} />
+                <div className={styles.bottomRow}>
+                  <div className={styles.reviewerButtons}>
+                    <button><i className="fa-solid fa-file-pen"></i></button>
+                    <button><i className="fa-solid fa-trash"></i></button>
+                  </div>
+                  <div className={styles.reviewerInfo}>
+                    {review.reviewer.name}
+                    <img src={review.reviewer.photo} alt={`${review.reviewer.name}'s avatar`} />
+                  </div>
                 </div>
                 <hr />
               </div>
