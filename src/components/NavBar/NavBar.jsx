@@ -12,14 +12,17 @@ const NavBar = ({ user, handleLogout }) => {
         <div className={styles.logoTitle}>Shelved</div>
       </div>
       <div className={styles.links}>
+        <NavLink to="/">Home</NavLink>
         <NavLink to="/books">Books</NavLink>
         {user ?
-          <ul>
-            <li>Welcome, {user.name}</li>
-            <li><NavLink to="/profiles">Profiles</NavLink></li>
-            <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
-            <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
-          </ul>
+          <div className={styles.userLinks}>
+            <img src="" alt="UserAvatar" />
+            <div className={styles.userDropDown}>
+              <NavLink to={`/profiles/${user._id}`}>My Profile</NavLink>
+              <NavLink to="/auth/change-password">Change Password</NavLink>
+              <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
+            </div>
+          </div>
         :
           <div className={styles.userLinks}>
             <img src="" alt="UserAvatar" />
