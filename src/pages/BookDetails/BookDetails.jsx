@@ -32,6 +32,7 @@ const Books = () => {
   const date = new Date(book.firstPublished).getFullYear()
 
   const handleAddToRead = async ()=>{
+    await bookService.addToRead(bookId)
   }
 
   return (  
