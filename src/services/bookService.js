@@ -55,7 +55,7 @@ async function addToWish(bookId){
   }
 }
 
-async function addReview(bookId){
+async function addReview(bookId, formData){
   try {
     const res = await fetch(`${BASE_URL}/${bookId}/review`, {
       method: 'POST',
@@ -63,6 +63,7 @@ async function addReview(bookId){
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
+      body: JSON.stringify(formData)
     })
     return await res.json()
   } catch (err) {

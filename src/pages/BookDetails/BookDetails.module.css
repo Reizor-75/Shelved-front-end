@@ -1,0 +1,22 @@
+.container{
+  background-color: white;
+  color: var(--main-font);
+  padding: 8px;
+}
+
+button{
+  margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 4px #000000aa;
+  background-color: var(--main-contrast);
+  font-weight: 600;
+}
+
+.reviews{
+  display: flex;
+  justify-content: space-between;
+  width: 100;
+
+}
