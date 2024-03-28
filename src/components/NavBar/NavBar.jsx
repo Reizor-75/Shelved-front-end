@@ -18,7 +18,7 @@ const NavBar = ({ user, handleLogout }) => {
           <div className={styles.userLinks}>
             <img src="" alt="UserAvatar" />
             <div className={styles.userDropDown}>
-              <NavLink to={`/profiles/${user._id}`}>My Profile</NavLink>
+              <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
               <NavLink to="/auth/change-password">Change Password</NavLink>
               <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
             </div>
