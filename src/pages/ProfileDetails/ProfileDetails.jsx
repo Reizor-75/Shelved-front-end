@@ -20,14 +20,18 @@ const ProfileDetails = () => {
     fetchBook()
   },[profileId])
 
+  if(!profile)
+    return <main className={styles.container}><h1>Loading...</h1></main>
+
   return (  
     <main className={styles.container}>
+      <h1>{profile.name}</h1>
       <div className={styles.ReadList}>
         <div className={styles.ReadListTitle}>Completed List</div>
           {profile.readList.length ? 
             <>
               {profile.readList.map(book =>
-                <div key={book._id}>book.title</div>
+                <div key={book._id}>{book.title}</div>
               )}
             </>
             :
