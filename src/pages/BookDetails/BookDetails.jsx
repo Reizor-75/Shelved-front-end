@@ -15,7 +15,7 @@ const Books = ({user}) => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    rating: 5,
+    rating: 1,
   })
   
   useEffect(() =>{
@@ -64,68 +64,102 @@ const Books = ({user}) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const { title, content, rating } = formData
+  const { title, content } = formData
 
   return (  
     <main className={styles.container}>
-      <div className={styles.userInfo}>
+      <div className={styles.bookInfo}>
         <h1>{book.title}</h1>
         <h2>{book.author}</h2>
         <h2>{date}</h2>
-      </div>
-      {book.genre.map(singleGenre =>
-        <span key={singleGenre}>{singleGenre} </span>
-      )}
-        
 
-      <div className={styles.addToList}>
-        <button onClick={handleAddToRead} className={styles.addToCompleted}>Add to Completed List</button>
-        <button onClick={handleAddToWish} className={styles.addToWish}>Add to Wish List</button>
+        {book.genre.map(singleGenre =>
+          <span key={singleGenre}>{singleGenre} </span>
+        )}
+          
+
+        <div className={styles.addToList}>
+          <button onClick={handleAddToRead} className={styles.addToCompleted}><i className="fa-solid fa-square-check"></i></button>
+          <button onClick={handleAddToWish} className={styles.addToWish}><i className="fa-solid fa-heart"></i></button>
+        </div>
       </div>
+      
       {user &&       
         <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.form}>
-          <h2>Reviews          
-            <button onClick={handleSubmitReview}>Write a Review</button>
-          </h2>
-          <label className={styles.label}>
-            Title
+          <div className={styles.reviewContainerHeader}>Reviews          
+            <button onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>
+          </div>
+          <div className={styles.formHeader}>
             <input
               type="text"
               value={title}
               name="title"
               onChange={handleChange}
+              placeholder='Title'
             />
-          </label>
-          <label className={styles.label}>
-            Rating
-            <input
-              type="number"
-              value={rating}
+            <div className={styles.starSelect}>
+              Rating
+              <input
+                type="radio"
+                value="1"
+                name="rating"
+                id='1star'
+                onChange={handleChange}
+              /> <label htmlFor="1star"><i className="fa-solid fa-star "></i></label>
+              <input
+              type="radio"
+              value="2"
               name="rating"
+              id='2star'
               onChange={handleChange}
-            />
-          </label> 
-          <label className={styles.label}>
-            Review
-            <textarea
-              type="text"
-              value={content}
-              name="content"
+            /> <label htmlFor="2star"><i className="fa-solid fa-star "></i></label>
+              <input
+              type="radio"
+              value="3"
+              name="rating"
+              id='3star'
               onChange={handleChange}
-            />
-          </label>          
+            /> <label htmlFor="3star"><i className="fa-solid fa-star "></i></label>
+              <input
+              type="radio"
+              value="4"
+              name="rating"
+              id='4star'
+              onChange={handleChange}
+            /> <label htmlFor="4star"><i className="fa-solid fa-star "></i></label>
+              <input
+              type="radio"
+              value="5"
+              name="rating"
+              id='5star'
+              onChange={handleChange}
+            /> <label htmlFor="5star"><i className="fa-solid fa-star "></i></label>
+            </div>
+          </div>
+          <textarea
+            type="text"
+            value={content}
+            name="content"
+            onChange={handleChange}
+            placeholder='Write Your Review'
+          />         
         </form>
       }
       <div className={styles.reviewsContainer}>
         {book.reviews.length ?
           <>
             {book.reviews.map(review =>
-              <div key={review._id}>
-                <h2> {review.title} 
-                  { renderStars(review.rating) }
-                </h2>
-                {review.content}
-                {review.reviewer.name}
+              <div key={review._id} className={styles.review}>               
+                <div className={styles.reviewHeader}>
+                  <div className={styles.reviewTitle}> {review.title} </div>
+                  <div className={styles.reviewStars}>{renderStars(review.rating)}</div>
+                </div>
+                <div className={styles.reviewContent}>{review.content}</div>
+                <div className={styles.reviewerInfo}>
+                  {review.reviewer.name}
+                  <img src={review.reviewer.photo} alt={`${review.reviewer.name}'s avatar`} />
+                </div>
+                <hr />
               </div>
             )}
           </>
