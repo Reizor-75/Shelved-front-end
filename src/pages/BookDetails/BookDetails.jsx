@@ -10,6 +10,7 @@ import styles from './BookDetails.module.css'
 
 //components
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
+import Review from '../../components/Review/Review';
 
 const Books = ({user}) => {
   const { bookId } = useParams()
@@ -38,22 +39,10 @@ const Books = ({user}) => {
   }
 
   const date = new Date(book.firstPublished).getFullYear()
-  const renderStars = (numOfStars) =>{
-    const stars = []
-    for(let i =0; i < numOfStars; i++){
-      stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
-    }
-    for(let i = numOfStars; i < 5; i++){
-      stars.push(<i className="fa-solid fa-star "></i>)
-    }
-    return stars;
-  }
-  
+
   const averageRating = (reviews) =>{
     const stars = []
-
-    reviews
-    
+    reviews    
     return stars;
   }
 
@@ -115,26 +104,11 @@ const Books = ({user}) => {
         {book.reviews.length ?
           <>
             {book.reviews.map(review =>
-              <div key={review._id} className={styles.review}>               
-                <div className={styles.reviewHeader}>
-                  <div className={styles.reviewTitle}> {review.title} </div>
-                  <div className={styles.reviewStars}>{renderStars(review.rating)}</div>
-                </div>
-                <div className={styles.reviewContent}>{review.content}</div>
-                <div className={styles.bottomRow}>
-                  <div className={styles.reviewerButtons}>
-
-
-                    <button ><i className="fa-solid fa-file-pen"></i></button>
-                    <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
-                  </div>
-                  <div className={styles.reviewerInfo}>
-                    {review.reviewer.name}
-                    <img src={review.reviewer.photo} alt={`${review.reviewer.name}'s avatar`} />
-                  </div>
-                </div>
-                <hr />
-              </div>
+              <Review
+                key={review._id}
+                review={review}
+                handleDeleteReview={handleDeleteReview}
+              />
             )}
           </>
           :
