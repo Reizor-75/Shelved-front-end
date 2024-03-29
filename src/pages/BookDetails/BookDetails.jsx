@@ -62,14 +62,19 @@ const Books = ({user}) => {
     await bookService.addToWish(bookId)
   }
 
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  } 
+  
   const handleSubmitReview= async evt => {
     evt.preventDefault()
     const data = await bookService.addReview(bookId, formData)
     setBook(data)
   }
 
-  const handleChange = evt => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  const handleDeleteReview= async (reviewId) => {
+    const data = await bookService.DeleteReview(bookId, reviewId)
+    setBook(data)
   }
 
   return (  
@@ -167,7 +172,7 @@ const Books = ({user}) => {
                 <div className={styles.bottomRow}>
                   <div className={styles.reviewerButtons}>
                     <button><i className="fa-solid fa-file-pen"></i></button>
-                    <button><i className="fa-solid fa-trash"></i></button>
+                    <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
                   </div>
                   <div className={styles.reviewerInfo}>
                     {review.reviewer.name}
