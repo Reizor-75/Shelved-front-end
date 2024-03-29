@@ -45,6 +45,14 @@ const Books = ({user}) => {
     }
     return stars;
   }
+  
+  const averageRating = (reviews) =>{
+    const stars = []
+
+    reviews
+    
+    return stars;
+  }
 
   const handleAddToRead = async ()=>{
     await bookService.addToRead(bookId)
@@ -68,15 +76,22 @@ const Books = ({user}) => {
 
   return (  
     <main className={styles.container}>
-      <div className={styles.bookInfo}>
-        <h1>{book.title}</h1>
-        <h2>{book.author}</h2>
-        <h2>{date}</h2>
+      <div className={styles.bookContainer}>
+        <img src="" alt={`${book.title}'s Cover`} />
+        <div className={styles.bookInfo}>
+          <div className={styles.bookTitle}> {book.title} </div>          
+          <div className={styles.bookAuthors}> by
+            {book.authors.map(author =>
+              <span key={author}> {author}</span>
+            )}
+          </div>
+          {averageRating(book.reviews)}
 
-        {book.genre.map(singleGenre =>
-          <span key={singleGenre}>{singleGenre} </span>
-        )}
-          
+          <div className={styles.bookPublished}>Published in {date}</div>            
+          {book.genre.map(singleGenre =>
+            <span key={singleGenre}>{singleGenre} </span>
+          )}          
+        </div>
 
         <div className={styles.addToList}>
           <button onClick={handleAddToRead} className={styles.addToCompleted}><i className="fa-solid fa-square-check"></i></button>
