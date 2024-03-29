@@ -4,7 +4,7 @@ import styles from './ReviewForm.module.css'
 
 const ReviewForm = ({handleChange, handleSubmitReview}) => {
   return (  
-    <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.form}>
+    <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.reviewForm}>
       <div className={styles.formHeader}>
         <div className={styles.left}>
           <input
