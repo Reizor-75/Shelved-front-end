@@ -102,18 +102,16 @@ const Books = ({user}) => {
       }
       <div className={styles.reviewsContainer}>
         {book.reviews.length ?
-          <>
-            {book.reviews.map(review =>
-              <Review
-                key={review._id}
-                review={review}
-                handleDeleteReview={handleDeleteReview}
-              />
-            )}
-          </>
+          book.reviews.map(review =>
+            <Review
+              key={review._id}
+              review={review}
+              handleDeleteReview={handleDeleteReview}
+            />
+          )
           :
-            <h3>No Reviews available</h3>
-        }
+          <div className={styles.noReview} >No Reviews available</div>
+        }      
       </div>
     </main>
   );
