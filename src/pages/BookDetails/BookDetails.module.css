@@ -9,7 +9,7 @@ button{
   padding: 8px;
   border-radius: 8px;
   border: none;
-  box-shadow: 2px 2px 4px #000000aa;
+  box-shadow: var(--shadow);
   background-color: var(--main-contrast);
   font-weight: 600;
   i{
@@ -50,55 +50,6 @@ button:hover{
   margin-top: 24px;
   padding: 8px;
 }
-
-form{  
-  background-color: var(--background);
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  border-radius: 4px;
-  border: none;
-  margin: 4px 0;
-  padding: 4px;
-  box-shadow: 2px 2px 4px #000000aa;
-}
-
-.starSelect{
-  display: flex;
-  flex-direction: row;
-}
-
-.formHeader{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-textarea{
-  height: 80px;
-  overflow-y: auto;
-  margin-bottom: 16px;
-}
-
-input[type=radio] {
-  position: fixed;
-  width: fit-content;
-  display: none;  
-  i{
-    font-size: var(--font-m);
-  }
-}
-
-input[type=radio]:checked ~ label{ 
-  color: var(--main-font);
-}
-
-input[type=radio]:checked + label, input[type=radio] ~ label{ 
-  color: var(--main-contrast);
-}
-
 
 .review{
   display: flex;

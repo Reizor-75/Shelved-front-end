@@ -2,12 +2,12 @@
   --background: #D9c1B4;
   --main-contrast: #BF5D39;
   --main-font: #2B4259;
+  --shadow:2px 2px 4px #000000aa;
   --font-xl: 2em;
   --font-l: 1.6em; 
   --font-m: 1.2em; 
   --font-s: 1em; 
   --font-xs: .8em; 
-
 }
 
 *,
@@ -32,7 +32,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
 }
 
 a,

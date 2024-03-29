@@ -8,6 +8,9 @@ import * as bookService from '../../services/bookService'
 // css
 import styles from './BookDetails.module.css'
 
+//components
+import ReviewForm from '../../components/ReviewForm/ReviewForm';
+
 const Books = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
@@ -103,61 +106,10 @@ const Books = ({user}) => {
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         
       {user && !book.reviews.find(review => review.reviewer._id === user.profile) &&   
-        <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.form}>
-          <div className={styles.formHeader}>
-            <input
-              type="text"
-              name="title"
-              onChange={handleChange}
-              placeholder='Title'
-            />
-            <div className={styles.starSelect}>
-              Rating
-              <input
-                type="radio"
-                value="1"
-                name="rating"
-                id='1star'
-                onChange={handleChange}
-              /> <label htmlFor="1star"><i className="fa-solid fa-star "></i></label>
-              <input
-              type="radio"
-              value="2"
-              name="rating"
-              id='2star'
-              onChange={handleChange}
-            /> <label htmlFor="2star"><i className="fa-solid fa-star "></i></label>
-              <input
-              type="radio"
-              value="3"
-              name="rating"
-              id='3star'
-              onChange={handleChange}
-            /> <label htmlFor="3star"><i className="fa-solid fa-star "></i></label>
-              <input
-              type="radio"
-              value="4"
-              name="rating"
-              id='4star'
-              onChange={handleChange}
-            /> <label htmlFor="4star"><i className="fa-solid fa-star "></i></label>
-              <input
-              type="radio"
-              value="5"
-              name="rating"
-              id='5star'
-              onChange={handleChange}
-            /> <label htmlFor="5star"><i className="fa-solid fa-star "></i></label>
-            </div>
-          </div>
-          <textarea
-            type="text"
-            name="content"
-            onChange={handleChange}
-            placeholder='Write Your Review'
-          />          
-          <button type='submit' onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>         
-        </form>
+        <ReviewForm 
+          handleChange={handleChange}
+          handleSubmitReview={handleSubmitReview}
+        />  
       }
       <div className={styles.reviewsContainer}>
         {book.reviews.length ?
@@ -171,7 +123,9 @@ const Books = ({user}) => {
                 <div className={styles.reviewContent}>{review.content}</div>
                 <div className={styles.bottomRow}>
                   <div className={styles.reviewerButtons}>
-                    <button><i className="fa-solid fa-file-pen"></i></button>
+
+
+                    <button ><i className="fa-solid fa-file-pen"></i></button>
                     <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
                   </div>
                   <div className={styles.reviewerInfo}>
