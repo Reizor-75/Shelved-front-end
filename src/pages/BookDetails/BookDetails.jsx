@@ -72,8 +72,6 @@ const Books = ({user}) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const { title, content } = formData
-
   return (  
     <main className={styles.container}>
       <div className={styles.bookContainer}>
@@ -104,7 +102,6 @@ const Books = ({user}) => {
           <div className={styles.formHeader}>
             <input
               type="text"
-              value={title}
               name="title"
               onChange={handleChange}
               placeholder='Title'
@@ -150,12 +147,11 @@ const Books = ({user}) => {
           </div>
           <textarea
             type="text"
-            value={content}
             name="content"
             onChange={handleChange}
             placeholder='Write Your Review'
           />          
-          <button onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>         
+          <button type='submit' onClick={handleSubmitReview}><i className="fa-solid fa-comments"></i></button>         
         </form>
       }
       <div className={styles.reviewsContainer}>

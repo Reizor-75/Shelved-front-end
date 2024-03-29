@@ -5,7 +5,10 @@ import { useState } from 'react'
 import styles from './Search.module.css'
 
 const Search = () => {
-  const [formData, setFormData] = useState()
+  const [formData, setFormData] = useState({     
+    catergory: "",
+    value: ""
+  })
 
   const handleSubmit= async evt => {
     evt.preventDefault()
@@ -20,7 +23,7 @@ const Search = () => {
       <h1>Search</h1>
       <form autoComplete="off" onSubmit={handleSubmit} className='form'>
         <select
-          name=""          
+          name="catergory"          
           onChange={handleChange}
         >
           <option value="title">Title</option>
@@ -29,6 +32,7 @@ const Search = () => {
         </select>
         <input 
           type="text" 
+          name="value"
           placeholder='Search'
           onChange={handleChange}
         />
