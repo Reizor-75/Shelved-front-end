@@ -71,10 +71,25 @@ async function addReview(bookId, formData){
   }
 }
 
+async function deleteReview(bookId, reviewId){
+  try {
+    const res = await fetch(`${BASE_URL}/${bookId}/${reviewId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllBooks,
   getBook,
   addToRead,
   addToWish,
   addReview,
+  deleteReview
 }
