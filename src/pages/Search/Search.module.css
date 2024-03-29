@@ -1,0 +1,9 @@
+
+select{
+  font-size: var(--font-m);
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px ;
+}
+

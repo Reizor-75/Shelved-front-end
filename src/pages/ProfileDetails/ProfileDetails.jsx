@@ -20,8 +20,6 @@ const ProfileDetails = () => {
     fetchBook()
   },[profileId])
 
-  
-
   const handleRemoveRead = async (bookId)=>{
     const data = await profileServices.deleteRead(bookId)
     setProfile(data)
