@@ -88,9 +88,9 @@ const Books = ({user}) => {
           )}          
         </div>
 
-        <div className={styles.addToList}>
-          <button onClick={handleAddToRead} className={styles.addToCompleted}><i className="fa-solid fa-square-check"></i></button>
-          <button onClick={handleAddToWish} className={styles.addToWish}><i className="fa-solid fa-heart"></i></button>
+        <div className={styles.List}>
+          <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
+          <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
         </div>
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         

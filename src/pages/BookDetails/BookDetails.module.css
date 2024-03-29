@@ -6,7 +6,7 @@
 
 button{
   margin: 4px;
-  padding: 8px;
+  padding: 6px;
   border-radius: 8px;
   border: none;
   box-shadow: var(--shadow);
@@ -17,7 +17,7 @@ button{
   }
 }
 
-button:hover{
+.addToList:hover{
   /* color: white; */
   background-color: var(--background);
 }

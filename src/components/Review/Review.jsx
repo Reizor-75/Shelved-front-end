@@ -4,12 +4,12 @@ import styles from './Review.module.css'
 
 const Review = ({review, handleDeleteReview}) => {
   const renderStars = (numOfStars) =>{
-    const stars = []
+    let stars = []
     for(let i =0; i < numOfStars; i++){
       stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
     }
     for(let i = numOfStars; i < 5; i++){
-      stars.push(<i className="fa-solid fa-star "></i>)
+      stars.push(<i className="fa-solid fa-star"></i>)
     }
     return stars;
   }
@@ -18,7 +18,7 @@ const Review = ({review, handleDeleteReview}) => {
     <div key={review._id} className={styles.review}>              
       <div className={styles.reviewHeader}>
         <div className={styles.reviewTitle}> {review.title} </div>
-        <div className={styles.reviewStars}>{renderStars(review.rating).map(ele => <span key={review.title}>{ele}</span>)}</div>
+        <div className={styles.reviewStars}>{renderStars(review.rating)}</div>
       </div>
       <div className={styles.reviewContent}>{review.content}</div>
       <div className={styles.bottomRow}>
