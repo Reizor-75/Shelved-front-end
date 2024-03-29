@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import EditProfile from './pages/EditProfile/EditProfile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Books from './pages/Books/Books'
 import BookDetails from './pages/BookDetails/BookDetails'
@@ -55,6 +56,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ProfileDetails />
+            </ProtectedRoute>
+          }
+        /> 
+        <Route
+          path="/profiles/:profileId/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditProfile user={user}/>
             </ProtectedRoute>
           }
         />
