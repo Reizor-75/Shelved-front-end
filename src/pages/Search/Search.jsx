@@ -1,6 +1,6 @@
 
 // css
-import styles from './ProfileDetails.module.css'
+import styles from './Search.module.css'
 
 const Search = () => {
   return (  

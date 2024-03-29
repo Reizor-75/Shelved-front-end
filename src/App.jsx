@@ -11,6 +11,7 @@ import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Books from './pages/Books/Books'
 import BookDetails from './pages/BookDetails/BookDetails'
+import Search from './pages/Search/Search'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -80,6 +81,10 @@ function App() {
         <Route
           path="/books/:bookId"
           element={<BookDetails user={user} /> }
+        />
+        <Route
+          path="/search"
+          element={<Search user={user} /> }
         />
       </Routes>
     </>

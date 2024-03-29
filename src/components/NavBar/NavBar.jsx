@@ -14,6 +14,7 @@ const NavBar = ({ user, handleLogout }) => {
       <div className={styles.links}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/books">Books</NavLink>
+        <NavLink to="/search">Search</NavLink>
         {user ?
           <div className={styles.userLinks}>
             <img src="" alt="UserAvatar" />
