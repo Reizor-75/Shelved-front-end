@@ -1,6 +1,8 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+import shelvedLogo from "../../../public/Shelved_Logo.svg"
+
 // css
 import styles from './NavBar.module.css'
 
@@ -8,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className={styles.navContainer}>
       <div className={styles.logoContainer}>
-        <img src="" alt="Shelved Logo"  className={styles.logoImage}/>
+        <img src={shelvedLogo} alt="Shelved Logo" width='100px' className={styles.logoImage}/>
         <div className={styles.logoTitle}>Shelved</div>
       </div>
       <div className={styles.links}>
@@ -17,7 +19,8 @@ const NavBar = ({ user, handleLogout }) => {
         <NavLink to="/search">Search</NavLink>
         {user ?
           <div className={styles.userLinks}>
-            <img src="" alt="UserAvatar" />
+            {/* <img src="" alt="UserAvatar" /> */}
+            <i className="fa-solid fa-circle-user"></i>
             <div className={styles.userDropDown}>
               <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
               <NavLink to="/auth/change-password">Change Password</NavLink>
@@ -26,7 +29,8 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         :
           <div className={styles.userLinks}>
-            <img src="" alt="UserAvatar" />
+            {/* <img src="" alt="UserAvatar" /> */}
+            <i className="fa-solid fa-circle-user"></i>
             <div className={styles.userDropDown}>
               <NavLink to="/auth/login">Log In</NavLink>
               <NavLink to="/auth/signup">Sign Up</NavLink>

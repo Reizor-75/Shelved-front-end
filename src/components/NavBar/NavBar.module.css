@@ -1,4 +1,6 @@
 .navContainer{
+  font-size: var(--font-l);
+  font-weight: 700;
   background-color: var(--main-contrast);
   display: flex;
   justify-content: space-between;
@@ -7,21 +9,22 @@
 .logoContainer{
   display: flex;
   align-items: center;
+  padding: 8px;
 }
 
 .logoTitle{
-  font-size: larger;
-  font-weight: 600;
   padding: 8px;
 }
 
 .links{
   display: flex;
   align-items: center;
+  font-size: var(--font-xs);
 }
 
 .links> *{
   padding: 8px;
+  font-weight: 700;
 }
 
 .userLinks{
@@ -29,6 +32,9 @@
   justify-content: right;
   padding: 8px;
   border-radius: 8px;
+  i{
+    font-size: var(--font-l);
+  }
 }
 
 .userLinks:hover{

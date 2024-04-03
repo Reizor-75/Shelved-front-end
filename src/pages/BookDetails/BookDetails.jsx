@@ -12,9 +12,10 @@ import styles from './BookDetails.module.css'
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import Review from '../../components/Review/Review';
 
-const Books = ({user}) => {
+const BookDetails = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
+  const [author, setAuthor] = useState()
 
   const [formData, setFormData] = useState({
     title: '',
@@ -28,6 +29,11 @@ const Books = ({user}) => {
       setBook(data)
     }
     fetchBook()
+    // const getAuthor = async (authorKey) => {
+    //   const data = await fetch(`https://openlibrary.org${authorKey}.json`)
+    //   setAuthor(data)
+    // }
+    // getAuthor(book.authors)
   },[bookId])
   
   if(!book){
@@ -69,29 +75,36 @@ const Books = ({user}) => {
     setBook(data)
   }
 
+
+
   return (  
     <main className={styles.container}>
       <div className={styles.bookContainer}>
-        <img src="" alt={`${book.title}'s Cover`} />
+        <img src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-L.jpg`} alt={`${book.title}'s Cover`} />
         <div className={styles.bookInfo}>
           <div className={styles.bookTitle}> {book.title} </div>          
           <div className={styles.bookAuthors}> by
+          {/* {book.author_name[0]} */}
             {book.authors.map(author =>
-              <span key={author}> {author}</span>
+              <span key={author.author.key}>  
+              </span>
             )}
           </div>
-          {averageRating(book.reviews)}
+          {/* {averageRating(book.reviews)} */}
+          <p>{book.description.value}</p>
 
-          <div className={styles.bookPublished}>Published in {date}</div>            
-          {book.genre.map(singleGenre =>
+          <div className={styles.bookPublished}>Published in {book.firstPublished}</div>            
+          {/* {book.genre.map(singleGenre =>
             <span key={singleGenre}>{singleGenre} </span>
-          )}          
+          )}           */}
         </div>
 
-        <div className={styles.List}>
-          <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
-          <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
-        </div>
+        { user &&
+          <div className={styles.List}>
+            <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
+            <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
+          </div>
+        }
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         
       {user && !book.reviews.find(review => review.reviewer._id === user.profile) &&   
@@ -101,7 +114,7 @@ const Books = ({user}) => {
         />  
       }
       <div className={styles.reviewsContainer}>
-        {book.reviews.length ?
+        {/* {book.reviews.length ?
           book.reviews.map(review =>
             <Review
               key={review._id}
@@ -111,10 +124,10 @@ const Books = ({user}) => {
           )
           :
           <div className={styles.noReview} >No Reviews available</div>
-        }      
+        }       */}
       </div>
     </main>
   );
 }
 
-export default Books;
+export default BookDetails;
