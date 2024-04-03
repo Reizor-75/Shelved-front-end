@@ -17,7 +17,7 @@ const Search = () => {
   const handleSubmit= async evt => {
     evt.preventDefault()
     try{
-      const data = await bookService.search(formData.catergory, formData.searchStr)
+      const data = await bookService.search(formData)
       setSearch(data)
     } catch(err){
       console.log(err)
