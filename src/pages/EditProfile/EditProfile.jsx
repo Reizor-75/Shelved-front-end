@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom"
 // css
 import styles from './EditProfile.module.css'
 
-const EditProfile = (profile) => {
+const EditProfile = () => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
   
@@ -19,7 +19,7 @@ const EditProfile = (profile) => {
 
   return (  
     <main className={styles.container}>
-      <div>Edit {profile.name}'s Profile </div>
+      <div>Edit {formData.name}'s Profile </div>
       <form autoComplete="off"  onSubmit={handleSubmit}>
       <label className={styles.label}>
           Name

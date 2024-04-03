@@ -1,17 +1,27 @@
 // npm modules
 import { useState } from 'react'
 
+//services
+import  * as bookService from '../../services/bookService'
+
 // css
 import styles from './Search.module.css'
 
 const Search = () => {
+  const [search, setSearch] = useState({})
   const [formData, setFormData] = useState({     
     catergory: "",
-    value: ""
+    searchStr: ""
   })
 
   const handleSubmit= async evt => {
     evt.preventDefault()
+    try{
+      const data = await bookService.search(formData.catergory, formData.searchStr)
+      setSearch(data)
+    } catch(err){
+      console.log(err)
+    }
   }
 
   const handleChange = evt => {
@@ -26,18 +36,23 @@ const Search = () => {
           name="catergory"          
           onChange={handleChange}
         >
+          <option value="" selected disabled hidden>Search By</option>
           <option value="title">Title</option>
           <option value="author">Author</option>
           <option value="ISBN">ISBN</option>
         </select>
         <input 
           type="text" 
-          name="value"
+          name="searchStr"
           placeholder='Search'
           onChange={handleChange}
         />
         <button type='submit'> <i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
+
+      {!search.length ? 
+        <>No Books Avaiable</>:
+        <>Books</> }
     </main>
   );
 }
