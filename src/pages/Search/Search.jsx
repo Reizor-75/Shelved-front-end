@@ -4,6 +4,8 @@ import { useState } from 'react'
 //services
 import  * as bookService from '../../services/bookService'
 
+import BookCard from '../../components/BookCard/BookCard'
+
 // css
 import styles from './Search.module.css'
 
@@ -52,7 +54,11 @@ const Search = () => {
 
       {!search.length ? 
         <>No Books Avaiable</>:
-        <>Books</> }
+        <div className={styles.cardContainer}>
+          {search.map(book => (
+            <BookCard key={book.key} book={book}/>
+          ))}
+      </div> }
     </main>
   );
 }

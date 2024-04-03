@@ -5,11 +5,19 @@ import styles from './BookCard.module.css'
 
 
 const BookCard = ({book}) => {
+
+
   return ( 
-  <Link to={`/books/${book._id}`}>
-    <div className={styles.card}>
-      <h1 className={styles.bookTitle}>{book.title}</h1>
-      <h2 className={styles.bookAuthor}>{book.author}</h2>
+  <Link to={`/books/${book.key}`}>
+    <div className={styles.card}>   
+      {book.cover_i ?   
+        <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={`${book.title} Cover Image`} />
+        :
+        <h1 className={styles.bookTitle}>{book.title}</h1>
+      }
+
+      {/* <h1 className={styles.bookTitle}>{book.title}</h1>
+      <h2 className={styles.bookAuthor}>{book.author}</h2> */}
     </div>
   </Link>  
   );
