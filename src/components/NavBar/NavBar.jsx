@@ -6,7 +6,7 @@ import shelvedLogo from "../../../public/Shelved_Logo.svg"
 // css
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, profile, handleLogout }) => {
   return (
     <nav className={styles.navContainer}>
       <div className={styles.logoContainer}>
@@ -19,8 +19,11 @@ const NavBar = ({ user, handleLogout }) => {
         <NavLink to="/search">Search</NavLink>
         {user ?
           <div className={styles.userLinks}>
-            {/* <img src="" alt="UserAvatar" /> */}
-            <i className="fa-solid fa-circle-user"></i>
+            { profile.photo ?
+              <img src={profile.photo} alt="UserAvatar" /> 
+              :
+              <i className="fa-solid fa-circle-user"></i>
+            }
             <div className={styles.userDropDown}>
               <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
               <NavLink to="/auth/change-password">Change Password</NavLink>

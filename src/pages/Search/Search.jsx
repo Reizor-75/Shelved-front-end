@@ -12,7 +12,7 @@ import styles from './Search.module.css'
 const Search = () => {
   const [search, setSearch] = useState({})
   const [formData, setFormData] = useState({     
-    category: "",
+    category: "title",
     searchStr: ""
   })
 
@@ -37,8 +37,9 @@ const Search = () => {
         <select
           name="category"          
           onChange={handleChange}
+          defaultValue="title"
         >
-          <option value="" selected disabled hidden>Search By</option>
+          {/* <option value="" selected disabled hidden>Search By</option> */}
           <option value="title">Title</option>
           <option value="author">Author</option>
           <option value="ISBN">ISBN</option>

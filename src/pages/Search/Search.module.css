@@ -7,3 +7,11 @@ select{
   box-shadow: var(--shadow);
 }
 
+form > *{
+  margin-right: 8px;
+}
+
+.cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+}

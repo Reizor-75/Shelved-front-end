@@ -8,11 +8,15 @@ const BookCard = ({book}) => {
 
 
   return ( 
-  <Link to={`/books/${book.key.substring(7)}`}>
-    
+  <Link to={`/books/${book.key.substring(7)}` }>
+
     <div className={styles.card}>   
       {book.cover_i ?   
-        <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={`${book.title} Cover Image`} />
+        <img 
+          src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} /** {book.cover} */
+          alt={`${book.title} Cover Image`} 
+          className={styles.cover}
+          />
         :
         <h1 className={styles.bookTitle}>{book.title}</h1>
       }

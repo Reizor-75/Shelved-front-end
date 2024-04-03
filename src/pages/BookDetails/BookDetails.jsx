@@ -15,7 +15,6 @@ import Review from '../../components/Review/Review';
 const BookDetails = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
-  const [author, setAuthor] = useState()
 
   const [formData, setFormData] = useState({
     title: '',
@@ -29,11 +28,6 @@ const BookDetails = ({user}) => {
       setBook(data)
     }
     fetchBook()
-    // const getAuthor = async (authorKey) => {
-    //   const data = await fetch(`https://openlibrary.org${authorKey}.json`)
-    //   setAuthor(data)
-    // }
-    // getAuthor(book.authors)
   },[bookId])
   
   if(!book){
@@ -74,8 +68,6 @@ const BookDetails = ({user}) => {
     const data = await bookService.deleteReview(bookId, reviewId)
     setBook(data)
   }
-
-
 
   return (  
     <main className={styles.container}>
