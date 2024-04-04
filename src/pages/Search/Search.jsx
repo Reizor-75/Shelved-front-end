@@ -39,7 +39,6 @@ const Search = () => {
           onChange={handleChange}
           defaultValue="title"
         >
-          {/* <option value="" selected disabled hidden>Search By</option> */}
           <option value="title">Title</option>
           <option value="author">Author</option>
           <option value="ISBN">ISBN</option>
