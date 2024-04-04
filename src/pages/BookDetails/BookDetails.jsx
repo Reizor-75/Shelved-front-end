@@ -39,7 +39,7 @@ const BookDetails = ({user}) => {
   }
 
   const date = new Date(book.firstPublished).getFullYear()
-
+  
   const averageRating = (reviews) =>{
     const stars = []
     reviews    
@@ -72,23 +72,16 @@ const BookDetails = ({user}) => {
   return (  
     <main className={styles.container}>
       <div className={styles.bookContainer}>
-        <img src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-L.jpg`} alt={`${book.title}'s Cover`} />
+        <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} />
         <div className={styles.bookInfo}>
           <div className={styles.bookTitle}> {book.title} </div>          
-          <div className={styles.bookAuthors}> by
-          {/* {book.author_name[0]} */}
-            {book.authors.map(author =>
-              <span key={author.author.key}>  
-              </span>
-            )}
+          <div className={styles.bookAuthors}> by {book.authors[0]}
           </div>
-          {/* {averageRating(book.reviews)} */}
-          <p>{book.description.value}</p>
+          {averageRating(book.reviews)}
+          <p>{book.description}</p>
 
-          <div className={styles.bookPublished}>Published in {book.firstPublished}</div>            
-          {/* {book.genre.map(singleGenre =>
-            <span key={singleGenre}>{singleGenre} </span>
-          )}           */}
+          <div className={styles.bookPublished}>Published in {date}</div>            
+    
         </div>
 
         { user &&
@@ -99,14 +92,14 @@ const BookDetails = ({user}) => {
         }
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         
-      {user && !book.reviews.find(review => review.reviewer._id === user.profile) &&   
+      {user && !book.reviews?.find(review => review.reviewer._id === user.profile) &&   
         <ReviewForm 
           handleChange={handleChange}
           handleSubmitReview={handleSubmitReview}
         />  
       }
       <div className={styles.reviewsContainer}>
-        {/* {book.reviews.length ?
+        {book.reviews?.length ?
           book.reviews.map(review =>
             <Review
               key={review._id}
@@ -116,7 +109,7 @@ const BookDetails = ({user}) => {
           )
           :
           <div className={styles.noReview} >No Reviews available</div>
-        }       */}
+        }      
       </div>
     </main>
   );

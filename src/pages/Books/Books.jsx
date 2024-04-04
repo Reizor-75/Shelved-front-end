@@ -29,7 +29,7 @@ const Books = () => {
       <h1>Books</h1>
       <div className={styles.cardContainer}>
         {books.map(book => (
-          <BookCard key={book._id} book={book}/>
+          <BookCard key={book.OLID} book={book}/>
         ))}
       </div>
     </main>
