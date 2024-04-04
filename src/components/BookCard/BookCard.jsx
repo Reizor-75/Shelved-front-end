@@ -1,19 +1,18 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // css
 import styles from './BookCard.module.css'
-
 
 const BookCard = ({book}) => {
 
 
   return ( 
-  <Link to={`/books/${book.key.substring(7)}` }>
+  <NavLink to={`/books/${book.key.substring(7)}`}  state={book}>
 
     <div className={styles.card}>   
-      {book.cover_i ?   
+      {book.cover_edition_key ?   
         <img 
-          src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} /** {book.cover} */
+          src={`https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg`} /** {book.cover} */
           alt={`${book.title} Cover Image`} 
           className={styles.cover}
           />
@@ -24,7 +23,7 @@ const BookCard = ({book}) => {
       {/* <h1 className={styles.bookTitle}>{book.title}</h1>
       <h2 className={styles.bookAuthor}>{book.author}</h2> */}
     </div>
-  </Link>  
+  </NavLink>  
   );
 }
 

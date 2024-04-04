@@ -13,11 +13,11 @@ const ProfileDetails = () => {
   const [profile, setProfile] = useState()
 
   useEffect(() =>{
-    const fetchBook= async () => {
+    const fetchProfile= async () => {
       const data = await profileServices.getProfile(profileId)
       setProfile(data)
     }
-    fetchBook()
+    fetchProfile()
   },[profileId])
 
   const handleRemoveRead = async (bookId)=>{
