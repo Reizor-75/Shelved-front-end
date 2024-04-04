@@ -102,6 +102,24 @@ async function search(query) {
   }
 }
 
+async function create(bookData) {
+  try {
+    
+    const res = await fetch(`${BASE_URL}/create`, {
+      method: 'POST',
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bookData)
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
+
 export { 
   getAllBooks,
   getBook,
@@ -110,4 +128,5 @@ export {
   addReview,
   deleteReview,
   search,
+  create,
 }
