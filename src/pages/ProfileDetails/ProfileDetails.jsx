@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, useParams } from "react-router-dom";
 
 // services
-import * as profileServices from '../../services/profileService'
+import * as profileService from '../../services/profileService'
 
 // css
 import styles from './ProfileDetails.module.css'
@@ -14,24 +14,24 @@ const ProfileDetails = () => {
 
   useEffect(() =>{
     const fetchProfile= async () => {
-      const data = await profileServices.getProfile(profileId)
+      const data = await profileService.getProfile(profileId)
       setProfile(data)
     }
     fetchProfile()
   },[profileId])
 
   const handleRemoveRead = async (bookId)=>{
-    const data = await profileServices.deleteRead(bookId)
+    const data = await profileService.deleteRead(bookId)
     setProfile(data)
   }
 
   const handleRemoveWish = async (bookId)=>{
-    const data = await profileServices.deleteWish(bookId)
+    const data = await profileService.deleteWish(bookId)
     setProfile(data)
   }
 
   const handleMoveBook = async (bookId)=>{
-    const data = await profileServices.moveBook(bookId)
+    const data = await profileService.moveBook(bookId)
     setProfile(data)
   }
 

@@ -1,28 +1,13 @@
 // npm modules
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-
-// services
-import * as profileServices from '../../services/profileService'
 
 // css
 import styles from './NavBar.module.css'
 
 // assets
-import shelvedLogo from "../../../public/Shelved_Logo.svg"
+import shelvedLogo from "../../assets/Shelved_Logo.svg"
 
 const NavBar = ({ user, handleLogout }) => {
-  const [profile, setProfile] = useState({})
-  
-  const fetchProfile= async (profileId) => {
-    const data = await profileServices.getProfile(profileId)
-    setProfile(data)
-  }
-
-  if(user){
-    fetchProfile(user.profile)
-  }
-
 
   return (
     <nav className={styles.navContainer}>
@@ -36,11 +21,8 @@ const NavBar = ({ user, handleLogout }) => {
         <NavLink to="/search">Search</NavLink>
         {user ?
           <div className={styles.userLinks}>
-            {profile?.photo ?
-              <img src={profile.photo} alt="UserAvatar" /> 
-              :
               <i className="fa-solid fa-circle-user"></i>
-            }
+
             <div className={styles.userDropDown}>
               <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
               <NavLink to="/auth/change-password">Change Password</NavLink>
