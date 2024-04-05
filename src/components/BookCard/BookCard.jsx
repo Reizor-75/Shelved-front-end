@@ -4,22 +4,7 @@ import { NavLink } from 'react-router-dom';
 // css
 import styles from './BookCard.module.css'
 
-// services
-// import * as bookService from '../../services/bookService'
-
 const BookCard = ({book}) => {
-
-  // const handleClick = async () =>{
-  //   const bookData = {
-  //     OLID: book.key.substring(7),    
-  //     title: book.title,
-  //     authors: [ book.author_name[0] ],
-  //     firstPublished: book.first_publish_year,
-  //     coverPhoto: book.cover_edition_key,
-  //   }
-  //   await bookService.create(bookData)
-  // }
-
   return ( 
     <NavLink to={`/books/${book._id}`}>
       <div className={styles.card}>   
@@ -30,7 +15,7 @@ const BookCard = ({book}) => {
             className={styles.cover}
             />
           :
-          <h1 className={styles.bookTitle}>{book.title}</h1>
+          <div className={styles.bookTitle}>{book.title}</div>
         }
 
         {/* <h1 className={styles.bookTitle}>{book.title}</h1>

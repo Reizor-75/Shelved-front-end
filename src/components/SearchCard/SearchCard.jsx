@@ -7,7 +7,6 @@ import * as bookService from '../../services/bookService'
 // css
 import styles from './SearchCard.module.css'
 
-
 const searchCard = ({foundBook}) => {
 
   const handleClick = async () =>{
