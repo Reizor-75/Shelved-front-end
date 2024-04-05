@@ -1,7 +1,3 @@
-.container{
-  padding: 8px;
-}
-
 .cardContainer{
   display: flex;
   flex-wrap: wrap;

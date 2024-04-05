@@ -59,5 +59,7 @@ nav{
 
 main{
   width: 80%;
-  color: var(--main-font);
+  color: var(--main-font);  background-color: var(--background);
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
 }
