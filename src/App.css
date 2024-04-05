@@ -59,4 +59,5 @@ nav{
 
 main{
   width: 80%;
+  color: var(--main-font);
 }

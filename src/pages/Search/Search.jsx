@@ -51,14 +51,16 @@ const Search = () => {
         />
         <button type='submit'> <i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
-
+      
       {!search.length ? 
-        <>No Books Avaiable</>:
+        <div className={styles.searchResult}>No Books Avaiable</div>
+        :
         <div className={styles.cardContainer}>
           {search.map(book => (
             <SearchCard key={book.key} foundBook={book}/>
           ))}
-      </div> }
+        </div>
+      }
     </main>
   );
 }
