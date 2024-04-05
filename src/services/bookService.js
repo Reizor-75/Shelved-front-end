@@ -104,7 +104,6 @@ async function search(query) {
 
 async function create(bookData) {
   try {
-    
     const res = await fetch(`${BASE_URL}/create`, {
       method: 'POST',
       headers: { 

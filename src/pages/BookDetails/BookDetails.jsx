@@ -74,22 +74,23 @@ const BookDetails = ({user}) => {
       <div className={styles.bookContainer}>
         <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} />
         <div className={styles.bookInfo}>
-          <div className={styles.bookTitle}> {book.title} </div>          
+          <div className={styles.bookTitle}> 
+            {book.title} 
+            { user &&
+            <div className={styles.List}>
+              <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
+              <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
+            </div>
+          }
+          </div>          
           <div className={styles.bookAuthors}> by {book.authors[0]}
+          <div className={styles.bookPublished}>Published in {date}</div>       
           </div>
           {averageRating(book.reviews)}
-          <p>{book.description}</p>
-
-          <div className={styles.bookPublished}>Published in {date}</div>            
-    
+          <div className={styles.bookDescription} ><p>{book.description}</p></div>     
         </div>
 
-        { user &&
-          <div className={styles.List}>
-            <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
-            <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
-          </div>
-        }
+        
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         
       {user && !book.reviews?.find(review => review.reviewer._id === user.profile) &&   

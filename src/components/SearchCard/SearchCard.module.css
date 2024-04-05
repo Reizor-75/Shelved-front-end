@@ -16,7 +16,8 @@ a{
 }
 
 .cover{
-  max-height: 280px;
+  width: 180px;
+  height: 280px;
 }
 
 select{
@@ -26,6 +27,7 @@ select{
 
 .bookTitle{
   display: flex;
+  align-items: center;
   background-image: url('../../assets/BookTemplate.svg');
   background-position: left bottom;
   width: 180px;

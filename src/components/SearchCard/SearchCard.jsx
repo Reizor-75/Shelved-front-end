@@ -25,7 +25,7 @@ const searchCard = ({foundBook}) => {
       <div className={styles.card} onClick={handleClick}>   
         {foundBook.cover_edition_key ?   
           <img 
-            src={`https://covers.openlibrary.org/b/olid/${foundBook.cover_edition_key}-M.jpg`} /** {book.cover} */
+            src={`https://covers.openlibrary.org/b/olid/${foundBook.cover_edition_key}-M.jpg`} 
             alt={`${foundBook.title} Cover Image`} 
             className={styles.cover}
             />
