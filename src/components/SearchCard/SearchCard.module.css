@@ -23,3 +23,14 @@ select{
   padding: 2px 4px;
   margin: 4px 0;
 }
+
+.bookTitle{
+  display: flex;
+  background-image: url('../../assets/BookTemplate.svg');
+  background-position: left bottom;
+  width: 180px;
+  height: 280px;
+  font-size: var(--font-l);
+  font-weight: 700;
+  text-align: center;
+}

@@ -7,6 +7,7 @@ import * as bookService from '../../services/bookService'
 // css
 import styles from './SearchCard.module.css'
 
+
 const searchCard = ({foundBook}) => {
 
   const handleClick = async () =>{
@@ -30,7 +31,7 @@ const searchCard = ({foundBook}) => {
             className={styles.cover}
             />
           :
-          <h1 className={styles.bookTitle}>{foundBook.title}</h1>
+            <div className={styles.bookTitle}>{foundBook.title}</div>
         }
 
         {/* <h1 className={styles.bookTitle}>{book.title}</h1>
