@@ -5,24 +5,24 @@ import { NavLink } from 'react-router-dom';
 import styles from './BookCard.module.css'
 
 // services
-import * as bookService from '../../services/bookService'
+// import * as bookService from '../../services/bookService'
 
 const BookCard = ({book}) => {
 
-  const handleClick = async () =>{
-    const bookData = {
-      OLID: book.key.substring(7),    
-      title: book.title,
-      authors: [ book.author_name[0] ],
-      firstPublished: book.first_publish_year,
-      coverPhoto: book.cover_edition_key,
-    }
-    await bookService.create(bookData)
-  }
+  // const handleClick = async () =>{
+  //   const bookData = {
+  //     OLID: book.key.substring(7),    
+  //     title: book.title,
+  //     authors: [ book.author_name[0] ],
+  //     firstPublished: book.first_publish_year,
+  //     coverPhoto: book.cover_edition_key,
+  //   }
+  //   await bookService.create(bookData)
+  // }
 
   return ( 
     <NavLink to={`/books/${book._id}`}>
-      <div className={styles.card} onClick={handleClick}>   
+      <div className={styles.card}>   
         {book.coverPhoto ?   
           <img 
             src={`https://covers.openlibrary.org/b/olid/${book.coverPhoto}-M.jpg`} /** {book.cover} */
