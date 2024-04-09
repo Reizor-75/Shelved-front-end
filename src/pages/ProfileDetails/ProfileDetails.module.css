@@ -1,3 +1,13 @@
+.profileInfo{
+  display: flex;
+}
+
+.profileAvatar{
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+}
+
 .listContainer{
   display: flex;
   justify-content: space-between;
@@ -11,14 +21,14 @@
   color: var(--main-font);
   font-size: var(--font-l);
   font-weight: 600;
-  background-color: white;
+  background-color: var(--main-contrast);
   border-radius: 8px 8px 0 0;
   padding: 8px 16px;
 }
 
 .listContent{
   font-size: var(--font-m);
-  background-color: var(--main-contrast);
+  background-color: white;
   padding: 8px 16px;
   border-radius: 0 0 8px 8px ;
 }

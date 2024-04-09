@@ -25,6 +25,10 @@ const EditProfile = () => {
           Name
           <input type="text" value={formData.name} name="name" onChange={handleChange} />
         </label> 
+        <label className={styles.label}>
+          Photo
+          <input type="text" value={formData.photo} name="photo" onChange={handleChange} />
+        </label> 
       </form>
     </main>
   );

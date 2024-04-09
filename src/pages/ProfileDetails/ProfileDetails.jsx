@@ -42,9 +42,16 @@ const ProfileDetails = () => {
 
   return (  
     <main className={styles.container}>
-      <h1>{profile.name} 
+      <div className={styles.profileInfo}>
+        <img 
+          src={profile.photo} 
+          alt={`${profile.name}'s avatar`} 
+          className={styles.profileAvatar}
+        />
+        div.
+        <h1>{profile.name}</h1>
         <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
-      </h1>
+      </div>
       <h2>Member since {date}</h2>
       <div className={styles.listContainer}>
         <div className={styles.list}>
