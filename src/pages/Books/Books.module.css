@@ -2,3 +2,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+@media screen and (max-width: 450px){
+  .cardContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

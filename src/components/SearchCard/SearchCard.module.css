@@ -36,3 +36,23 @@ select{
   font-weight: 700;
   text-align: center;
 }
+
+@media screen and (max-width: 450px){
+  .card{
+    margin: 8px;
+    width: 180px;
+    height: 270px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .cover{
+    width: 170px;
+    height: 260px;
+  }
+
+  .bookTitle{
+    width: 170px;
+    height: 260px;
+  }
+}
