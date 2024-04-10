@@ -1,6 +1,6 @@
 .container{
   background-color: white;
-  padding: 0;;
+  padding: 0;
 }
 
 button{
@@ -77,4 +77,22 @@ button{
   font-size: var(--font-m);
   font-weight: 700;
   padding-bottom: 32px;
+}
+
+@media screen and (max-width: 450px){
+  .bookContainer{
+    height: 400px;
+    img{
+      width: 35%;
+      height: min-content;
+    }
+  }
+
+  .reviewContainerHeader{
+    border-radius: 0;
+  }
+
+  .reviewsContainer{
+    margin-bottom: 30px;
+  }
 }

@@ -12,6 +12,7 @@ const ReviewForm = ({handleChange, handleSubmitReview}) => {
             name="title"
             onChange={handleChange}
             placeholder='Title'
+            className={styles.reviewInput}
           />
           <div className={styles.starSelect}>
             Rating

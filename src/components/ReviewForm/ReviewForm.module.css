@@ -61,3 +61,29 @@ input[type=radio]:checked + label, input[type=radio] ~ label{
   width: fit-content;
   font-size: var(--font-xs);
 }
+
+@media screen and (max-width: 450px){
+  .left{
+    display: flex;    
+    flex-wrap: wrap-reverse;
+    .reviewTitle{
+      font-weight: 700;
+    }
+    i{    
+      font-size: var(--font-xs);
+    }
+  }
+
+  .starSelect{
+    margin-left: 0;
+  }
+  
+  .formHeader{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .reviewInput {
+    width: 200px;
+  }
+}
