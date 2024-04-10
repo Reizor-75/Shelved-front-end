@@ -42,8 +42,28 @@ const NavBar = ({ user, handleLogout }) => {
       </div>
 
       <div className={styles.linksMobile}>
-        <i className="fa-solid fa-bars"></i>
+        {user ?
+          <div className={styles.userLinks}>
+            <i className="fa-solid fa-bars"></i>
 
+            <div className={styles.userDropDown}>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/books">Books</NavLink>
+              <NavLink to="/search">Search</NavLink>
+              <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
+              <NavLink to="/auth/change-password">Change Password</NavLink>
+              <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
+            </div>
+          </div>
+        :
+          <div className={styles.userLinks}>
+            <i className="fa-solid fa-bars"></i>
+            <div className={styles.userDropDown}>
+              <NavLink to="/auth/login">Log In</NavLink>
+              <NavLink to="/auth/signup">Sign Up</NavLink>
+            </div>
+          </div>
+        }
       </div>
     </nav>
   )
