@@ -62,3 +62,13 @@
     width: 120px;
   }
 }
+
+@media screen and (max-width: 450px){
+  .navContainer{
+    padding: 0;
+  }
+
+  .logoImage{
+    width: 50px;
+  }
+}
