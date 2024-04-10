@@ -40,6 +40,11 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         }
       </div>
+
+      <div className={styles.linksMobile}>
+        <i className="fa-solid fa-bars"></i>
+
+      </div>
     </nav>
   )
 }

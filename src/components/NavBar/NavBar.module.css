@@ -63,6 +63,10 @@
   }
 }
 
+.linksMobile{
+  display: none;
+}
+
 @media screen and (max-width: 450px){
   .navContainer{
     padding: 0;
@@ -70,5 +74,16 @@
 
   .logoImage{
     width: 50px;
+  }
+
+  .links{
+    display: none;
+  }
+
+  .linksMobile{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-xs);
+    margin-right: 16px;
   }
 }
