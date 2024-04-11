@@ -1,5 +1,5 @@
 .container{
-  background-color: var(--background);
+  /* background-color: var(--background); */
   padding: 16px;
   border-radius: 0 0 8px 8px;
 }
@@ -10,12 +10,23 @@ form{
   flex-wrap: wrap;
 }
 
-select{
+select.typeSelect{
   font-size: var(--font-m);
-  width: 300px;
   border: none;
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px;
+  margin: 0;
   box-shadow: var(--shadow);
+}
+
+input.searchInput{
+  margin: 0;
+  border-radius: 0;
+}
+
+button.searchButton{
+  margin: 0;
+  padding: 4px;
+  border-radius: 0 4px 4px 0;
 }
 
 form > *{

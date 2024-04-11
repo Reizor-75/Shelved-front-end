@@ -66,6 +66,7 @@ main{
   /* background-color: var(--background); */
   padding: 16px;
   border-radius: 0 0 8px 8px;
+  margin-top: 8px;
 }
 
 @media screen and (max-width: 450px){

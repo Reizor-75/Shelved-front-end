@@ -38,6 +38,7 @@ const Search = () => {
           name="category"          
           onChange={handleChange}
           defaultValue="title"
+          className={styles.typeSelect}
         >
           <option value="title">Title</option>
           <option value="author">Author</option>
@@ -48,8 +49,9 @@ const Search = () => {
           name="searchStr"
           placeholder='Search'
           onChange={handleChange}
+          className={styles.searchInput}
         />
-        <button type='submit'> <i className="fa-solid fa-magnifying-glass"></i></button>
+        <button type='submit' className={styles.searchButton}> <i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
       
       {!search.length ? 
