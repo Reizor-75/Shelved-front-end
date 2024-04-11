@@ -3,12 +3,12 @@ import { useState, useRef } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 // services
-import * as authService from '../../services/authService'
+import * as profileService from '../../services/profileService'
 
 // css
 import styles from './EditProfile.module.css'
 
-const EditProfile = ({ handleAuthEvt }) => {
+const EditProfile = () => {
   const navigate = useNavigate()
   const imgInputRef = useRef(null)
 
@@ -18,11 +18,6 @@ const EditProfile = ({ handleAuthEvt }) => {
   const [message, setMessage] = useState('')
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleChange = evt => {
-    setMessage('')
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
 
   const handleChangePhoto = evt => {
     const file = evt.target.files[0]
@@ -51,6 +46,11 @@ const EditProfile = ({ handleAuthEvt }) => {
     setPhotoData({ photo: evt.target.files[0] })
   }
 
+  const handleChange = evt => {
+    setMessage('')
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
@@ -58,9 +58,8 @@ const EditProfile = ({ handleAuthEvt }) => {
         throw new Error('No VITE_BACK_END_SERVER_URL in front-end .env')
       }
       setIsSubmitted(true)
-      await authService.signup(formData, photoData.photo)
-      handleAuthEvt()
-      navigate('/')
+      await profileService.updateProfile(formData, photoData.photo)
+      navigate(`/profiles/${formData._id}`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -76,7 +75,7 @@ const EditProfile = ({ handleAuthEvt }) => {
 
   return (  
     <main className={styles.container}>
-      <div>Edit {formData.name}'s Profile </div>
+      <div>Edit {state.name}'s Profile</div>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>

@@ -89,6 +89,28 @@ async function moveBook(bookId){
   }
 }
 
+async function updateProfile(formData, photoData){
+  try {
+    const res = await fetch(`${BASE_URL}/${formData._id}/update`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },  
+      body: JSON.stringify(formData),
+    })     
+    const json = await res.json()
+    if (json.err) throw new Error(json.err)
+
+    if (photoData) {
+      await addPhoto(photoData)
+    }
+
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllProfiles,
   addPhoto,
@@ -96,4 +118,5 @@ export {
   deleteRead,
   deleteWish,
   moveBook,
+  updateProfile
 }

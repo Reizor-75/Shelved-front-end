@@ -43,13 +43,16 @@ const ProfileDetails = () => {
   return (  
     <main className={styles.container}>
       <div className={styles.profileInfo}>
-        <img 
-          src={profile.photo} 
-          alt={`${profile.name}'s avatar`} 
-          className={styles.profileAvatar}
-        />
-        div.
-        <h1>{profile.name}</h1>
+        {profile.photo ? 
+          <img 
+            src={profile.photo} 
+            alt={`${profile.name}'s avatar`} 
+            className={styles.profileAvatar}
+          />
+          :
+          <i className={`fa-solid fa-circle-user ${styles.userIcon}` }></i>
+          }
+        <h1 className={styles.profileName}>{profile.name}</h1>
         <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
       </div>
       <h2>Member since {date}</h2>

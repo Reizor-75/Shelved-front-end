@@ -13,6 +13,10 @@
   border-radius: 50%;
 }
 
+.profileName{
+  padding: 0 8px;
+}
+
 .listContainer{
   display: flex;
   justify-content: space-between;
@@ -42,6 +46,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.userIcon{
+  font-size: 100px;
 }
 
 @media screen and (max-width: 450px){
