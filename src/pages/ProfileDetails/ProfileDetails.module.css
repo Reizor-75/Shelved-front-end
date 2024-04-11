@@ -1,9 +1,14 @@
+.container {
+  padding-bottom: 60px;
+}
+
 .profileInfo{
   display: flex;
 }
 
 .profileAvatar{
   width: 150px;
+  height: 150px;
   background-color: white;
   border-radius: 50%;
 }
@@ -37,4 +42,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+@media screen and (max-width: 450px){
+  .container{
+    width: 100%
+  }
+
 }

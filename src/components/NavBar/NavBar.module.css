@@ -1,9 +1,11 @@
 .navContainer{
+  width: 100%;
+  color: var(--main-contrast);
   font-size: var(--font-l);
   font-weight: 700;
-  background-color: var(--main-contrast);
   display: flex;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .logoContainer{
@@ -14,6 +16,7 @@
 
 .logoTitle{
   padding: 8px;
+  font-size: var(--font-l);
 }
 
 .links{
