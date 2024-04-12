@@ -6,10 +6,12 @@
 }
 
 .reviewHeader{
-  display: flex;    
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  
   .reviewTitle{
     font-weight: 700;
+    font-size: var(--font-l);
   }
   i{    
     font-size: var(--font-xs);
@@ -25,8 +27,9 @@
   overflow-y: auto;
   scrollbar-color: var(--main-font) var(--background);
   scrollbar-width: thin;
-  font-size: var(--font-xs);
+  font-size: var(--font-s);
 }
+
 .bottomRow{
   display: flex;
   justify-content: space-between;

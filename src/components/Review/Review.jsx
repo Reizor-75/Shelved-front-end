@@ -17,8 +17,8 @@ const Review = ({review, handleDeleteReview}) => {
   return (  
     <div key={review._id} className={styles.review}>              
       <div className={styles.reviewHeader}>
-        <div className={styles.reviewTitle}> {review.title} </div>
         <div className={styles.reviewStars}>{renderStars(review.rating)}</div>
+        <div className={styles.reviewTitle}> {review.title} </div>        
       </div>
       <div className={styles.reviewContent}>{review.content}</div>
       <div className={styles.bottomRow}>

@@ -23,7 +23,7 @@ button{
 
 .bookContainer{
   display: flex;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   border-radius: 0 0 8px 8px;
   padding: 16px;
   font-size: var(--font-m);
@@ -37,7 +37,7 @@ button{
 .bookInfo{  
   display: flex;
   flex-direction: column;
-  padding-left: 8px;
+  padding-left: 36px;
   width: 65%;
 }
 

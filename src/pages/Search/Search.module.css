@@ -4,34 +4,6 @@
   border-radius: 0 0 8px 8px;
 }
 
-form{  
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-select.typeSelect{
-  font-size: var(--font-m);
-  border: none;
-  border-radius: 4px 0 0 4px;
-  margin: 0;
-  box-shadow: var(--shadow);
-}
-
-input.searchInput{
-  margin: 0;
-  border-radius: 0;
-}
-
-button.searchButton{
-  margin: 0;
-  padding: 4px;
-  border-radius: 0 4px 4px 0;
-}
-
-form > *{
-  margin-right: 8px;
-}
 
 .cardContainer{
   display: flex;
