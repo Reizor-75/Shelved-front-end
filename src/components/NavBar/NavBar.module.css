@@ -74,6 +74,14 @@
   display: none;
 }
 
+@media screen and (max-width: 860px){
+  .navContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
 @media screen and (max-width: 450px){
   .navContainer{
     padding: 0;
