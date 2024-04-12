@@ -15,42 +15,66 @@ const ReviewForm = ({handleChange, handleSubmitReview}) => {
             className={styles.reviewInput}
           />
           <div className={styles.starSelect}>
-            Rating
-            <input
-              type="radio"
-              value="1"
-              name="rating"
-              id='1star'
-              onChange={handleChange}
-            /> <label htmlFor="1star"><i className="fa-solid fa-star "></i></label>
-            <input
-            type="radio"
-            value="2"
-            name="rating"
-            id='2star'
-            onChange={handleChange}
-          /> <label htmlFor="2star"><i className="fa-solid fa-star "></i></label>
-            <input
-            type="radio"
-            value="3"
-            name="rating"
-            id='3star'
-            onChange={handleChange}
-          /> <label htmlFor="3star"><i className="fa-solid fa-star "></i></label>
-            <input
-            type="radio"
-            value="4"
-            name="rating"
-            id='4star'
-            onChange={handleChange}
-          /> <label htmlFor="4star"><i className="fa-solid fa-star "></i></label>
-            <input
-            type="radio"
-            value="5"
-            name="rating"
-            id='5star'
-            onChange={handleChange}
-          /> <label htmlFor="5star"><i className="fa-solid fa-star "></i></label>
+            <label htmlFor="1star">
+              <input
+                type="radio"
+                value="1"
+                name="rating"
+                id='1star'
+                onChange={handleChange}
+              />               
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+            </label>
+            <label htmlFor="2star">
+              <input
+                type="radio"
+                value="2"
+                name="rating"
+                id='2star'
+                onChange={handleChange}
+              />               
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+            </label>               
+            <label htmlFor="3star">
+              <input
+                type="radio"
+                value="3"
+                name="rating"
+                id='3star'
+                onChange={handleChange}
+              />
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+            </label>
+            <label htmlFor="4star">
+              <input
+                type="radio"
+                value="4"
+                name="rating"
+                id='4star'
+                onChange={handleChange}
+              />
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+            </label>
+            <label htmlFor="5star">
+              <input
+                type="radio"
+                value="5"
+                name="rating"
+                id='5star'
+                onChange={handleChange}
+              />
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+              <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
+            </label>
           </div>     
         </div>   
         <button type='submit' onClick={handleSubmitReview} className={styles.submitReivew}><i className="fa-solid fa-up-right-from-square"></i></button>   

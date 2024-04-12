@@ -21,12 +21,6 @@ input, textarea {
   font-weight: 600;
 }
 
-.starSelect{
-  display: flex;
-  flex-direction: row;
-  margin-left: 8px;
-}
-
 .formHeader{
   display: flex;
   justify-content: space-between;
@@ -40,21 +34,65 @@ textarea{
   margin-bottom: 16px;
 }
 
-input[type=radio] {
-  position: fixed;
+.starSelect {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin-left: 8px;
+}
+
+.starSelect label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-s);
+  cursor: pointer;
+}
+
+.starSelect label:last-child {
+  position: static;
+}
+
+.starSelect label:nth-child(1) {
+  z-index: 5;
+}
+
+.starSelect label:nth-child(2) {
+  z-index: 4;
+}
+
+.starSelect label:nth-child(3) {
+  z-index: 3;
+}
+
+.starSelect label:nth-child(4) {
+  z-index: 2;
+}
+
+.starSelect label:nth-child(5) {
+  z-index: 1;
+}
+
+.starSelect input {
+  margin: 0 8px;
   width: fit-content;
-  display: none;  
-  i{
-    font-size: var(--font-m);
-  }
+  height: 100%;
+  display: none;
 }
 
-input[type=radio]:checked ~ label{ 
-  color: var(--main-font);
+.starSelect label .icon{
+  float: left;
+  color: transparent;
 }
 
-input[type=radio]:checked + label, input[type=radio] ~ label{ 
-  color: var(--main-contrast);
+.starSelect label:last-child .icon{
+  color: var(--main-font)
+}
+
+.starSelect:not(:hover) label input:checked ~ .icon,
+.starSelect:hover label:hover .icon {
+  color: var( --main-contrast );
 }
 
 .submitReivew{
