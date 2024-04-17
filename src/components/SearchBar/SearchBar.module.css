@@ -12,9 +12,15 @@ select.typeSelect{
   box-shadow: var(--shadow);
 }
 
+
 input.searchInput{
   margin: 0;
   border-radius: 0;
+}
+
+input[type=text]:focus {
+  outline:none;
+  background-color: var(--background);
 }
 
 button.searchButton{
