@@ -63,9 +63,9 @@ const ProfileDetails = () => {
             {profile.readList.length ? 
               <>
                 {profile.readList.map(book =>
-                  <div key={book._id}>
+                  <div key={book._id} className={styles.book}>
                     <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
-                    <button onClick={()=>handleRemoveRead(book._id)}><i className="fa-solid fa-heart-circle-xmark"></i></button>
+                    <button onClick={()=>handleRemoveRead(book._id)}><i className="fa-solid fa-eraser"></i></button>
                   </div>
                 )}
               </>
@@ -82,10 +82,12 @@ const ProfileDetails = () => {
                 {profile.wishList.map(book =>
                   <div key={book._id} className={styles.book}>
                     <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
-                    <button onClick={()=>handleMoveBook(book._id)}>
-                      <i className="fa-solid fa-square-check"></i> 
-                    </button>            
-                    <button onClick={()=>handleRemoveWish(book._id)}><i className="fa-solid fa-eraser"></i></button>
+                    <div>
+                      <button onClick={()=>handleMoveBook(book._id)}>
+                        <i className="fa-solid fa-square-check"></i> 
+                      </button>            
+                      <button onClick={()=>handleRemoveWish(book._id)}><i className="fa-solid fa-heart-circle-xmark"></i></button>
+                    </div>
                   </div>
                 )}
               </>
