@@ -2,7 +2,7 @@
 // css
 import styles from './Review.module.css'
 
-const Review = ({review, handleDeleteReview}) => {
+const Review = ({review, handleDeleteReview, user}) => {
   const renderStars = (numOfStars) =>{
     let stars = []
     for(let i =0; i < numOfStars; i++){
@@ -22,14 +22,17 @@ const Review = ({review, handleDeleteReview}) => {
       </div>
       <div className={styles.reviewContent}>{review.content}</div>
       <div className={styles.bottomRow}>
-        <div className={styles.reviewerButtons}>
-          <button ><i className="fa-solid fa-file-pen"></i></button>
-          <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
-        </div>
         <div className={styles.reviewerInfo}>
           {review.reviewer.name}
           <img src={review.reviewer.photo} alt={`${review.reviewer.name}'s avatar`} />
         </div>
+        {review.reviewer._id === user?.profile &&
+          <div className={styles.reviewerButtons}>
+            <button ><i className="fa-solid fa-file-pen"></i></button>
+            <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
+          </div>
+        }
+        
       </div>
       <hr />   
     </div>

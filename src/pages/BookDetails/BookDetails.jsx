@@ -104,6 +104,7 @@ const BookDetails = ({user}) => {
           book.reviews.map(review =>
             <Review
               key={review._id}
+              user={user}
               review={review}
               handleDeleteReview={handleDeleteReview}
             />
