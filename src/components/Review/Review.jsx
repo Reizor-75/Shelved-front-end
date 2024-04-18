@@ -2,7 +2,7 @@
 // css
 import styles from './Review.module.css'
 
-const Review = ({review, handleDeleteReview, user}) => {
+const Review = ({user, review, handleEditReview, handleDeleteReview}) => {
   const renderStars = (numOfStars) =>{
     let stars = []
     for(let i =0; i < numOfStars; i++){
@@ -28,7 +28,7 @@ const Review = ({review, handleDeleteReview, user}) => {
         </div>
         {review.reviewer._id === user?.profile &&
           <div className={styles.reviewerButtons}>
-            <button ><i className="fa-solid fa-file-pen"></i></button>
+            <button onClick={()=>handleEditReview(review._id)} ><i className="fa-solid fa-file-pen"></i></button>
             <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         }

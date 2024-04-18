@@ -64,7 +64,11 @@ const BookDetails = ({user}) => {
     setBook(data)
   }
 
-  const handleDeleteReview= async (reviewId) => {
+  const handleEditReview = async (reviewId) => {
+    console.log(reviewId + " boop")
+  }
+
+  const handleDeleteReview = async (reviewId) => {
     const data = await bookService.deleteReview(bookId, reviewId)
     setBook(data)
   }
@@ -106,6 +110,7 @@ const BookDetails = ({user}) => {
               key={review._id}
               user={user}
               review={review}
+              handleEditReview={handleEditReview}
               handleDeleteReview={handleDeleteReview}
             />
           )
