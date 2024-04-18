@@ -16,6 +16,7 @@ import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
 const BookDetails = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
+  const [edit, setEdit] = useState( false )
 
   const [formData, setFormData] = useState({
     title: '',
@@ -65,8 +66,8 @@ const BookDetails = ({user}) => {
     setBook(data)
   }
 
-  const handleEditReview = async (reviewId) => {
-    console.log(reviewId + " boop")
+  const handleEditReview = async () => {
+    setEdit(true)
   }
 
   const handleDeleteReview = async (reviewId) => {
@@ -108,19 +109,22 @@ const BookDetails = ({user}) => {
         {book.reviews?.length ?
           book.reviews.map(review =>
             <>
-              <Review
-                key={review._id}
-                user={user}
-                review={review}
-                handleEditReview={handleEditReview}
-                handleDeleteReview={handleDeleteReview}
-              />
-              <EditReviewForm
-                key={review._id}
-                review={review}
-                handleChange={handleChange}
-                handleSubmitReview={handleSubmitReview}
-              />
+              { edit===false ?
+                <Review
+                  key={review._id}
+                  user={user}
+                  review={review}
+                  handleEditReview={handleEditReview}
+                  handleDeleteReview={handleDeleteReview}
+                />
+                :
+                <EditReviewForm
+                  key={review._id}
+                  review={review}
+                  handleChange={handleChange}
+                  handleSubmitReview={handleSubmitReview}
+                />
+              }
             </>
           )
           :
