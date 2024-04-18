@@ -11,6 +11,7 @@ import styles from './BookDetails.module.css'
 //components
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import Review from '../../components/Review/Review';
+import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
 
 const BookDetails = ({user}) => {
   const { bookId } = useParams()
@@ -106,13 +107,21 @@ const BookDetails = ({user}) => {
       <div className={styles.reviewsContainer}>
         {book.reviews?.length ?
           book.reviews.map(review =>
-            <Review
-              key={review._id}
-              user={user}
-              review={review}
-              handleEditReview={handleEditReview}
-              handleDeleteReview={handleDeleteReview}
-            />
+            <>
+              <Review
+                key={review._id}
+                user={user}
+                review={review}
+                handleEditReview={handleEditReview}
+                handleDeleteReview={handleDeleteReview}
+              />
+              <EditReviewForm
+                key={review._id}
+                review={review}
+                handleChange={handleChange}
+                handleSubmitReview={handleSubmitReview}
+              />
+            </>
           )
           :
           <div className={styles.noReview} >No Reviews available</div>
