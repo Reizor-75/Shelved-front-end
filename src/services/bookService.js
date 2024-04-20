@@ -71,6 +71,22 @@ async function addReview(bookId, formData){
   }
 }
 
+async function editReview(bookId, reviewId, formData){
+  try {
+    const res = await fetch(`${BASE_URL}/${bookId}/${reviewId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 async function deleteReview(bookId, reviewId){
   try {
     const res = await fetch(`${BASE_URL}/${bookId}/${reviewId}`, {
@@ -125,6 +141,7 @@ export {
   addToRead,
   addToWish,
   addReview,
+  editReview,
   deleteReview,
   search,
   create,
