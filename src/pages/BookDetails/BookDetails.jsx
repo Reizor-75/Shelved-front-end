@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"
 
 // services
 import * as bookService from '../../services/bookService'
@@ -66,7 +66,12 @@ const BookDetails = ({user}) => {
     setBook(data)
   }
 
-  const handleEditReview = async () => {
+  const handleEditReview = async (review) => {
+    setFormData({
+      title: review.title,
+      content: review.content,
+      rating: review.rating
+    })
     setEdit(true)
   }
 
@@ -108,10 +113,9 @@ const BookDetails = ({user}) => {
       <div className={styles.reviewsContainer}>
         {book.reviews?.length ?
           book.reviews.map(review =>
-            <>
+            <div key={review._id}>
               { edit===false ?
                 <Review
-                  key={review._id}
                   user={user}
                   review={review}
                   handleEditReview={handleEditReview}
@@ -119,13 +123,10 @@ const BookDetails = ({user}) => {
                 />
                 :
                 <EditReviewForm
-                  key={review._id}
                   review={review}
-                  handleChange={handleChange}
-                  handleSubmitReview={handleSubmitReview}
                 />
               }
-            </>
+            </div>
           )
           :
           <div className={styles.noReview} >No Reviews available</div>

@@ -1,11 +1,25 @@
-
+// npm modules
+import { useState } from 'react';
 // css
 import styles from './EditReviewForm.module.css'
 
-const EditReviewForm = ({handleChange, review}) => {
+const EditReviewForm = ({review}) => {
+  const [formData, setFormData] = useState({
+    title: review.title,
+    content: review.content,
+    rating: 1,
+  })
+
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleSubmitEdit = async () => {
+    console.log("boop")
+  }
 
   return (
-    <form autoComplete="off" className={styles.reviewForm}>
+    <form autoComplete="off" onSubmit={handleSubmitEdit} className={styles.reviewForm}>
       <div className={styles.formHeader}>
         <div className={styles.left}>
           <input
@@ -14,7 +28,7 @@ const EditReviewForm = ({handleChange, review}) => {
             onChange={handleChange}
             placeholder='Title'
             className={styles.reviewInput}
-            value={review.title}
+            value={formData.title}
           />
           <div className={styles.starSelect}>
             <label htmlFor="1star">
@@ -79,14 +93,14 @@ const EditReviewForm = ({handleChange, review}) => {
             </label>
           </div>     
         </div>   
-        <button type='submit' className={styles.submitReivew}><i className="fa-solid fa-up-right-from-square"></i></button>   
+        <button type='submit'  onSubmit={handleSubmitEdit} className={styles.submitReivew}><i className="fa-solid fa-up-right-from-square"></i></button>   
       </div>
       <textarea
         type="text"
         name="content"
         onChange={handleChange}
         placeholder='Write Your Review'
-        value={review.content}
+        value={formData.content}
       />                
     </form>
   );

@@ -28,7 +28,7 @@ const Review = ({user, review, handleEditReview, handleDeleteReview}) => {
         </div>
         {review.reviewer._id === user?.profile &&
           <div className={styles.reviewerButtons}>
-            <button onClick={()=>handleEditReview(review._id)} ><i className="fa-solid fa-file-pen"></i></button>
+            <button onClick={()=>handleEditReview(review)} ><i className="fa-solid fa-file-pen"></i></button>
             <button onClick={()=>handleDeleteReview(review._id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         }
