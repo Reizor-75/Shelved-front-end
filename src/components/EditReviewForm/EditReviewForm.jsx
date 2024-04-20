@@ -40,6 +40,7 @@ const EditReviewForm = ({review, handleUpdateReview}) => {
                 name="rating"
                 id='1star'
                 onChange={handleChange}
+                checked={formData.rating === "1"}
               />               
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
             </label>
@@ -50,6 +51,7 @@ const EditReviewForm = ({review, handleUpdateReview}) => {
                 name="rating"
                 id='2star'
                 onChange={handleChange}
+                checked={formData.rating === "2"}
               />               
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span>
@@ -61,6 +63,7 @@ const EditReviewForm = ({review, handleUpdateReview}) => {
                 name="rating"
                 id='3star'
                 onChange={handleChange}
+                checked={formData.rating === "3"}
               />
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
@@ -73,6 +76,7 @@ const EditReviewForm = ({review, handleUpdateReview}) => {
                 name="rating"
                 id='4star'
                 onChange={handleChange}
+                checked={formData.rating === "4"}
               />
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
@@ -86,6 +90,7 @@ const EditReviewForm = ({review, handleUpdateReview}) => {
                 name="rating"
                 id='5star'
                 onChange={handleChange}
+                checked={formData.rating === "5"}
               />
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
               <span className={styles.icon}> <i className="fa-solid fa-star "></i></span> 
