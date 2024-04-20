@@ -12,12 +12,13 @@ import styles from './BookDetails.module.css'
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import Review from '../../components/Review/Review';
 import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
+import ListButton from '../../components/ListButton/ListButton';
+
 
 const BookDetails = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
   const [edit, setEdit] = useState( false )
-
   useEffect(() =>{
     const fetchBook= async () => {
       const data = await bookService.getBook(bookId)
@@ -78,11 +79,17 @@ const BookDetails = ({user}) => {
           <div className={styles.bookTitle}> 
             {book.title} 
             { user &&
-            <div className={styles.List}>
-              <button onClick={handleAddToRead} className={styles.addToList}><i className="fa-solid fa-square-check"></i></button>
-              <button onClick={handleAddToWish} className={styles.addToList}><i className="fa-solid fa-heart"></i></button>
-            </div>
-          }
+              <div className={styles.List}>
+                <ListButton
+                  type={"Read List"}
+                  handleClickFunction={handleAddToRead}
+                />
+                <ListButton
+                  type={"Wish List"}
+                  handleClickFunction={handleAddToWish}
+                />
+              </div>
+            }
           </div>          
           <div className={styles.bookAuthors}> by {book.authors[0]}
           <div className={styles.bookPublished}>Published in {date}</div>       
@@ -90,7 +97,6 @@ const BookDetails = ({user}) => {
           {averageRating(book.reviews)}
           <div className={styles.bookDescription} ><p>{book.description}</p></div>     
         </div>
-
         
       </div>
       <div className={styles.reviewContainerHeader}>Reviews</div>         
