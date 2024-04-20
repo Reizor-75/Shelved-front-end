@@ -3,19 +3,15 @@ import { useState } from 'react';
 // css
 import styles from './EditReviewForm.module.css'
 
-const EditReviewForm = ({review}) => {
+const EditReviewForm = ({review, handleSubmitEdit}) => {
   const [formData, setFormData] = useState({
     title: review.title,
     content: review.content,
-    rating: 1,
+    rating: review.rating,
   })
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
-
-  const handleSubmitEdit = async () => {
-    console.log("boop")
   }
 
   return (
