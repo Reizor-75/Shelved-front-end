@@ -73,6 +73,7 @@ const BookDetails = ({user}) => {
   const handleUpdateReview = async (reviewId, reviewFormData) =>{
     const data = await bookService.editReview(bookId, reviewId, reviewFormData)
     setBook(data)
+    setEdit(false)
   }
 
   const handleDeleteReview = async (reviewId) => {
