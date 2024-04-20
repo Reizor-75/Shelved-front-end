@@ -1,9 +1,10 @@
 // npm modules
 import { useState } from 'react';
+
 // css
 import styles from './EditReviewForm.module.css'
 
-const EditReviewForm = ({review, handleSubmitEdit}) => {
+const EditReviewForm = ({review, handleUpdateReview}) => {
   const [formData, setFormData] = useState({
     title: review.title,
     content: review.content,
@@ -12,6 +13,11 @@ const EditReviewForm = ({review, handleSubmitEdit}) => {
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleSubmitEdit = async evt => {
+    evt.preventDefault()
+    handleUpdateReview(review._id, formData)
   }
 
   return (

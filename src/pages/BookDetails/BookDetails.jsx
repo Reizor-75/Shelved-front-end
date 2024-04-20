@@ -70,9 +70,8 @@ const BookDetails = ({user}) => {
     setEdit(true)
   }
 
-  const handleSubmitEdit = async evt => {
-    evt.preventDefault()
-    const data = await bookService.editReview(bookId, formData)
+  const handleUpdateReview = async (reviewId, reviewFormData) =>{
+    const data = await bookService.editReview(bookId, reviewId, reviewFormData)
     setBook(data)
   }
 
@@ -125,7 +124,7 @@ const BookDetails = ({user}) => {
                 :
                 <EditReviewForm
                   review={review}
-                  handleSubmitEdit={handleSubmitEdit}
+                  handleUpdateReview={handleUpdateReview}
                 />
               }
             </div>
