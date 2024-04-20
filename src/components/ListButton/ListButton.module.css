@@ -1,0 +1,12 @@
+.popoverMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  opacity: .9;
+  background-color:var(--main-font);
+  padding: 8px;
+  font-size: large;
+  font-weight: 600;
+  border-radius: 8px;
+}

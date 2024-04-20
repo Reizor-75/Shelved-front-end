@@ -14,7 +14,6 @@ import Review from '../../components/Review/Review';
 import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
 import ListButton from '../../components/ListButton/ListButton';
 
-
 const BookDetails = ({user}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
