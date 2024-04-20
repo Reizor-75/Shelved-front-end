@@ -18,12 +18,6 @@ const BookDetails = ({user}) => {
   const [book, setBook] = useState()
   const [edit, setEdit] = useState( false )
 
-  const [formData, setFormData] = useState({
-    title: '',
-    content: '',
-    rating: 1,
-  })
-  
   useEffect(() =>{
     const fetchBook= async () => {
       const data = await bookService.getBook(bookId)
@@ -56,13 +50,8 @@ const BookDetails = ({user}) => {
     await bookService.addToWish(bookId)
   }
 
-  const handleChange = evt => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  } 
-  
-  const handleSubmitReview= async evt => {
-    evt.preventDefault()
-    const data = await bookService.addReview(bookId, formData)
+  const handleAddReview = async (reviewFormData) => {    
+    const data = await bookService.addReview(bookId, reviewFormData)
     setBook(data)
   }
 
@@ -107,8 +96,7 @@ const BookDetails = ({user}) => {
       <div className={styles.reviewContainerHeader}>Reviews</div>         
       {user && !book.reviews?.find(review => review.reviewer._id === user.profile) &&   
         <ReviewForm 
-          handleChange={handleChange}
-          handleSubmitReview={handleSubmitReview}
+          handleAddReview={handleAddReview}
         />  
       }
       <div className={styles.reviewsContainer}>

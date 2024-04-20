@@ -1,8 +1,25 @@
+//npm module
+import { useState } from 'react'
 
 // css
 import styles from './ReviewForm.module.css'
 
-const ReviewForm = ({handleChange, handleSubmitReview}) => {
+const ReviewForm = ({handleAddReview}) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    content: '',
+    rating: 1,
+  })
+
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  } 
+  
+  const handleSubmitReview= async evt => {
+    evt.preventDefault()
+    handleAddReview(formData)
+  }
+
   return (  
     <form autoComplete="off" onSubmit={handleSubmitReview} className={styles.reviewForm}>
       <div className={styles.formHeader}>
