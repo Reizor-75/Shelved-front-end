@@ -22,10 +22,10 @@ const SearchBar = () => {
     try{
       const data = await bookService.search(formData)
       setSearch(data)
-      navigate('/search', {state:{search}})
     } catch(err){
       console.log(err)
     } 
+    navigate('/search', {state:{search}})
   }
 
   const handleChange = evt => {
@@ -34,28 +34,27 @@ const SearchBar = () => {
 
   return ( 
     <div className={styles.searchBar}>
-          <form autoComplete="off" onSubmit={handleSubmit} className='form'>
-            <select
-              name="category"          
-              onChange={handleChange}
-              defaultValue="title"
-              className={styles.typeSelect}
-            >
-              <option value="title">Title</option>
-              <option value="author">Author</option>
-              <option value="ISBN">ISBN</option>
-            </select>
-            <input 
-              type="text" 
-              name="searchStr"
-              placeholder='Search'
-              onChange={handleChange}
-              className={styles.searchInput}
-            />
-            
-            <button type='submit' className={styles.searchButton}><i className="fa-solid fa-magnifying-glass"></i></button>
-          </form>
-        </div>
+      <form autoComplete="off" onSubmit={handleSubmit} className='form'>
+        <select
+          name="category"          
+          onChange={handleChange}
+          defaultValue="title"
+          className={styles.typeSelect}
+        >
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="ISBN">ISBN</option>
+        </select>
+        <input 
+          type="text" 
+          name="searchStr"
+          placeholder='Search'
+          onChange={handleChange}
+          className={styles.searchInput}
+        />        
+        <button type='submit' className={styles.searchButton}><i className="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
   );
 }
 
