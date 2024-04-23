@@ -61,7 +61,7 @@ nav{
 
 main{
   width: 60%;
-  /* min-width: 640px; */
+  min-width: 880px;
   max-width: 1248px;
   color: var(--main-font);  
   /* background-color: var(--background); */
@@ -70,9 +70,10 @@ main{
   margin-top: 8px;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 768px){
   
   main{
+    min-width:unset;
     width: 100%;
   }
 }
