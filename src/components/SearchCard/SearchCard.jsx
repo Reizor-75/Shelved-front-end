@@ -15,7 +15,7 @@ const searchCard = ({foundBook}) => {
       OLID: foundBook.key.substring(7),    
       title: foundBook.title,
       authors: [ foundBook.author_name[0] ],
-      firstPublished: foundBook.first_publish_year,
+      firstPublished: new Date(foundBook.first_publish_year,0,0),
       coverPhoto: foundBook.cover_edition_key,
     }
     await bookService.create(bookData)
