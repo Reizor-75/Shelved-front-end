@@ -14,6 +14,11 @@ const Landing = () => {
   const [recent, setRecent] = useState()
 
   useEffect(() =>{
+    const fetchRecent = async () => {
+      const recentData = await bookService.recent()
+      setRecent(recentData)
+    }
+    fetchRecent()
   }, [])
 
   return (
