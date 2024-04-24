@@ -3,3 +3,12 @@
   align-items: center;
   flex-direction: column;
 }
+
+.slideContainer{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-color: var(--main-font) var(--background);
+  scrollbar-width: thin;
+  font-size: var(--font-xs);
+}
