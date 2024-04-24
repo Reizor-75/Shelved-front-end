@@ -134,6 +134,16 @@ async function create(bookData) {
   }
 }
 
+async function recent(){
+  try {
+    const res = await fetch(`${BASE_URL}/recent`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
 
 export { 
   getAllBooks,
@@ -145,4 +155,5 @@ export {
   deleteReview,
   search,
   create,
+  recent,
 }

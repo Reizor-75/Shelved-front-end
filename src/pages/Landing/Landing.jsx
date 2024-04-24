@@ -20,7 +20,7 @@ const Landing = () => {
     <main className={styles.container}>
       <h1>Recent Releases</h1>
       <div className={styles.slideContainer}>
-        {recent.map(book => (
+        {recent?.map(book => (
           <BookCard key={book.OLID} book={book}/>
         ))}
       </div>
