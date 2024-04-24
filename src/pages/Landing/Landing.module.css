@@ -14,12 +14,14 @@
   padding: 4px; 
   i{
     font-size: var(--font-xl);
+    opacity: .7;
   }
 }
 
-.bookselection{  
+.bookselection {  
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
+  scroll-behavior:smooth;
   scrollbar-color: var(--main-font) var(--background);
   scrollbar-width: thin;
   font-size: var(--font-xs);
