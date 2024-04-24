@@ -1,6 +1,6 @@
 // npm modules
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 // services
 import  * as bookService from '../../services/bookService'
@@ -8,24 +8,21 @@ import  * as bookService from '../../services/bookService'
 // css
 import styles from './SearchBar.module.css'
 
-const SearchBar = () => {
-  const [search, setSearch] = useState({})
+const SearchBar = ({handleSearch}) => {
   const [formData, setFormData] = useState({     
     category: "title",
     searchStr: ""
   })
-  const navigate = useNavigate()
 
   const handleSubmit= async evt => {
-    evt.preventDefault()
+    evt.preventDefault() 
 
     try{
       const data = await bookService.search(formData)
-      setSearch(data)
+      handleSearch(data)
     } catch(err){
       console.log(err)
     } 
-    navigate('/search', {state:{search}})
   }
 
   const handleChange = evt => {

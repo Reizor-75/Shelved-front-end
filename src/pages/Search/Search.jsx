@@ -1,19 +1,16 @@
 // npm modules
-// import { useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 //services
 // import  * as bookService from '../../services/bookService'
 
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 import SearchCard from '../../components/SearchCard/SearchCard'
 
 // css
 import styles from './Search.module.css'
 
-const Search = () => {
-  const location = useLocation();
-
-  let search = location.state.search;
+const Search = ({search}) => {
 
   if(!search){
     return <h1>

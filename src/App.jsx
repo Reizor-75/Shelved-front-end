@@ -26,6 +26,8 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [search, setSearch] = useState({})
+
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -38,9 +40,14 @@ function App() {
     setUser(authService.getUser())
   }
 
+  const handleSearch = (searchData) => {
+    setSearch(searchData)
+    navigate('/search')
+  }
+
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} handleSearch={handleSearch}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -93,7 +100,7 @@ function App() {
         />
         <Route
           path="/search"
-          element={<Search user={user} /> }
+          element={<Search user={user} search={search}/> }
         />
       </Routes>
     </>

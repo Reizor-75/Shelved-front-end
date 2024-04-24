@@ -10,7 +10,7 @@ import styles from './NavBar.module.css'
 // assets
 import shelvedLogo from "../../assets/Shelved_Logo.svg"
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, handleSearch }) => {
   
   return (
     <nav>
@@ -69,7 +69,7 @@ const NavBar = ({ user, handleLogout }) => {
             </div>
           }
         </div>
-        <SearchBar />
+        <SearchBar handleSearch={ handleSearch }/>
       </div>
     </nav>
   )
