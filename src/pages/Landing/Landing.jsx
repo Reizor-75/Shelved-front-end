@@ -25,9 +25,12 @@ const Landing = () => {
     <main className={styles.container}>
       <h1>Recent Releases</h1>
       <div className={styles.slideContainer}>
-        {recent?.map(book => (
+        <div className={styles.navButton}><i className="fa-solid fa-circle-arrow-left"></i></div>
+        <div className={styles.bookselection}>{recent?.map(book => (
           <BookCard key={book.OLID} book={book}/>
         ))}
+        </div>
+        <div className={styles.navButton}><i className="fa-solid fa-circle-arrow-right"></i></div>
       </div>
       <h1>Fan Favorites</h1>
       <div className={styles.slideContainer}>

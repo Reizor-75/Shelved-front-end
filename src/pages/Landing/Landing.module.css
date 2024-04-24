@@ -6,7 +6,19 @@
 
 .slideContainer{
   display: flex;
+  align-items: center;
   width: 100%;
+}
+
+.navButton{
+  padding: 4px; 
+  i{
+    font-size: var(--font-xl);
+  }
+}
+
+.bookselection{  
+  display: flex;
   overflow-x: auto;
   scrollbar-color: var(--main-font) var(--background);
   scrollbar-width: thin;
