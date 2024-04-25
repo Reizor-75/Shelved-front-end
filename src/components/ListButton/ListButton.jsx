@@ -14,25 +14,26 @@ const ListButton = ({type, handleClickFunction}) => {
   } 
 
   return (  
-      <Popover 
-        isOpen={isPopoverOpen}
-        transform={{ top: 40, left: 20 }}
-        transformMode='relative'
-        onClickOutside={() => setIsPopoverOpen(false)}
-        content={() => ( 
-          <div className={styles.popoverMessage}>
-            Added to {type}
-          </div>
-        )}
-      >        
+    <Popover 
+      isOpen={isPopoverOpen}
+      transform={{ top: 40, left: 20 }}
+      transformMode='relative'
+      onClickOutside={() => setIsPopoverOpen(false)}
+      content={() => ( 
+        <div className={styles.popoverMessage}>
+          Added to {type}
+        </div>
+      )}
+    >        
         <button onClick={handleClick} className={styles.addToList}>
           {type === "Read List" ?
             <i className="fa-solid fa-book-open-reader"></i>
             :
             <i className="fa-solid fa-heart"></i>
           }
-        </button>
-      </Popover>
+      
+      </button>
+    </Popover>
   );
 }
 

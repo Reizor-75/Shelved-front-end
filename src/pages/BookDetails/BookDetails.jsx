@@ -14,7 +14,7 @@ import Review from '../../components/Review/Review';
 import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
 import ListButton from '../../components/ListButton/ListButton';
 
-const BookDetails = ({user}) => {
+const BookDetails = ({user, profile}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
   const [edit, setEdit] = useState( false )
@@ -82,10 +82,12 @@ const BookDetails = ({user}) => {
                 <ListButton
                   type={"Read List"}
                   handleClickFunction={handleAddToRead}
+                  profile={profile}
                 />
                 <ListButton
                   type={"Wish List"}
                   handleClickFunction={handleAddToWish}
+                  profile={profile}
                 />
               </div>
             }

@@ -25,7 +25,9 @@ const Landing = () => {
   const containerRef = useRef()
 
   const handleScroll = (scrollAmount)=>{
-    const newPosition = scrollPosition + scrollAmount
+    let newPosition = scrollPosition;
+    if(scrollPosition + scrollAmount >= 0 && scrollPosition + scrollAmount <= 1200)
+    {newPosition = scrollPosition + scrollAmount}
 
     setScrollPosition(newPosition) 
     containerRef.current.scrollLeft = newPosition
@@ -35,12 +37,13 @@ const Landing = () => {
     <main className={styles.container}>
       <h1>Recent Releases</h1>
       <div className={styles.slideContainer} > 
-      <div className={styles.navButton} onClick={()=>handleScroll(-200)}><i className="fa-solid fa-circle-arrow-left"></i></div>
-        <div className={styles.bookselection} ref={containerRef}>{recent?.map(book => (
+      <div className={styles.navButton} onClick={()=>handleScroll(-220)}><i className="fa-solid fa-circle-arrow-left"></i></div>
+        <div className={styles.bookselection} ref={containerRef}>
+          {recent?.map(book => (
           <BookCard key={book.OLID} book={book}/>
         ))}
         </div>
-        <div className={styles.navButton} onClick={()=>handleScroll(200)}><i className="fa-solid fa-circle-arrow-right"></i></div>
+        <div className={styles.navButton} onClick={()=>handleScroll(220)}><i className="fa-solid fa-circle-arrow-right"></i></div>
       </div>
       <h1>Fan Favorites</h1>
       <div className={styles.slideContainer}>

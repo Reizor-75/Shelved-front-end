@@ -12,10 +12,12 @@
 
 .navButton{
   padding: 4px; 
-  i{
-    font-size: var(--font-xl);
-    opacity: .7;
-  }
+  opacity: .7;
+  font-size: var(--font-xl);
+}
+
+.navButton:hover{
+  opacity: 1;
 }
 
 .bookselection {  

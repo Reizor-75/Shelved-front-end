@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -20,15 +20,25 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [curProfile, setCurProfile] = useState()
   const [search, setSearch] = useState({})
 
   const navigate = useNavigate()
+
+  useEffect(() =>{
+    const fetchProfile= async () => {
+      const data = await profileService.getProfile(user.profile)
+      setCurProfile(data)
+    }
+    fetchProfile()
+  },[user])
 
   const handleLogout = () => {
     authService.logout()
@@ -96,7 +106,7 @@ function App() {
         />
         <Route
           path="/books/:bookId"
-          element={<BookDetails user={user} /> }
+          element={<BookDetails user={user} profile={curProfile}/> }
         />
         <Route
           path="/search"
