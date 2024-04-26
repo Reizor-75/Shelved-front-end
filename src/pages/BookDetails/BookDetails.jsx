@@ -83,11 +83,13 @@ const BookDetails = ({user, profile}) => {
                   type={"Read List"}
                   handleClickFunction={handleAddToRead}
                   profile={profile}
+                  bookId={bookId}
                 />
                 <ListButton
                   type={"Wish List"}
                   handleClickFunction={handleAddToWish}
                   profile={profile}
+                  bookId={bookId}
                 />
               </div>
             }

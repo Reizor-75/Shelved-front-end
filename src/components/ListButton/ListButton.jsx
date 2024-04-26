@@ -5,14 +5,14 @@ import { Popover } from "react-tiny-popover"
 // css
 import styles from "./ListButton.module.css"
 
-const ListButton = ({type, handleClickFunction}) => {  
+const ListButton = ({type, handleClickFunction, profile, bookId}) => {  
   const [isPopoverOpen, setIsPopoverOpen]= useState( false )
   
   const handleClick = async () =>{
     setIsPopoverOpen(true)
     handleClickFunction()
   } 
-
+  
   return (  
     <Popover 
       isOpen={isPopoverOpen}
@@ -24,15 +24,27 @@ const ListButton = ({type, handleClickFunction}) => {
           Added to {type}
         </div>
       )}
-    >        
-        <button onClick={handleClick} className={styles.addToList}>
-          {type === "Read List" ?
+    >      
+
+    { profile?.readList.some(book => book._id === bookId) ?   
+          <button onClick={handleClick} className={styles.addToList} disabled>
             <i className="fa-solid fa-book-open-reader"></i>
-            :
-            <i className="fa-solid fa-heart"></i>
-          }
-      
-      </button>
+          </button>   
+          :
+          <button onClick={handleClick} className={styles.addToList} >
+            <i className="fa-solid fa-book-open-reader"></i>   
+          </button> 
+      }   
+      { 
+        // profile?.wishList.includes(bookId) ?      
+        //   <button onClick={handleClick} className={styles.addToList} disabled>
+        //     <i className="fa-solid fa-heart"></i>
+        //   </button>   
+        //   :
+        //   <button onClick={handleClick} className={styles.addToList}>
+        //     <i className="fa-solid fa-heart"></i> 
+        //   </button> 
+      }
     </Popover>
   );
 }
