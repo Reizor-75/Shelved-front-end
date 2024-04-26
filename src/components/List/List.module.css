@@ -1,0 +1,12 @@
+.book{  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.book:hover{
+  background-color: var(--background);
+  font-weight: 600;
+}
