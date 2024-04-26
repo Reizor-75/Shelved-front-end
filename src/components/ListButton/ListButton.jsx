@@ -12,7 +12,7 @@ const ListButton = ({type, handleClickFunction, profile, bookId}) => {
     setIsPopoverOpen(true)
     handleClickFunction()
   } 
-  
+
   return (  
     <Popover 
       isOpen={isPopoverOpen}
@@ -26,25 +26,25 @@ const ListButton = ({type, handleClickFunction, profile, bookId}) => {
       )}
     >      
 
-    { profile?.readList.some(book => book._id === bookId) ?   
-          <button onClick={handleClick} className={styles.addToList} disabled>
-            <i className="fa-solid fa-book-open-reader"></i>
-          </button>   
-          :
-          <button onClick={handleClick} className={styles.addToList} >
-            <i className="fa-solid fa-book-open-reader"></i>   
-          </button> 
-      }   
-      { 
-        // profile?.wishList.includes(bookId) ?      
-        //   <button onClick={handleClick} className={styles.addToList} disabled>
-        //     <i className="fa-solid fa-heart"></i>
-        //   </button>   
-        //   :
-        //   <button onClick={handleClick} className={styles.addToList}>
-        //     <i className="fa-solid fa-heart"></i> 
-        //   </button> 
-      }
+    {type === "Read List" ?
+      profile?.readList.some(book => book._id === bookId) ?   
+        <button onClick={handleClick} className={styles.addToList} disabled>
+          <i className="fa-solid fa-book-open-reader"></i>
+        </button>   
+        :
+        <button onClick={handleClick} className={styles.addToList} >
+          <i className="fa-solid fa-book-open-reader"></i>   
+        </button> 
+      :
+      profile?.wishList.some(book => book._id === bookId) ?      
+        <button onClick={handleClick} className={styles.addToList} disabled>
+          <i className="fa-solid fa-heart"></i>
+        </button>   
+        :
+        <button onClick={handleClick} className={styles.addToList}>
+          <i className="fa-solid fa-heart"></i> 
+        </button> 
+    }   
     </Popover>
   );
 }
