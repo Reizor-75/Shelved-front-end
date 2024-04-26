@@ -12,12 +12,15 @@ import styles from './Landing.module.css'
 
 const Landing = () => {
   const [recent, setRecent] = useState()
+  const [favorite, setFavorite] = useState()
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() =>{
     const fetchRecent = async () => {
       const recentData = await bookService.recent()
       setRecent(recentData)
+      const favoriteData = await bookService.favorite()
+      setFavorite(favoriteData)
     }
     fetchRecent()
   }, [])
@@ -46,8 +49,15 @@ const Landing = () => {
         <div className={styles.navButton} onClick={()=>handleScroll(220)}><i className="fa-solid fa-circle-arrow-right"></i></div>
       </div>
       <h1>Fan Favorites</h1>
-      <div className={styles.slideContainer}>
 
+      <div className={styles.slideContainer}>
+        <div className={styles.navButton} onClick={()=>handleScroll(-220)}><i className="fa-solid fa-circle-arrow-left"></i></div>
+          <div className={styles.bookselection} ref={containerRef}>
+            {favorite?.map(book => (
+            <BookCard key={book.OLID} book={book}/>
+          ))}
+          </div>
+        <div className={styles.navButton} onClick={()=>handleScroll(220)}><i className="fa-solid fa-circle-arrow-right"></i></div>
       </div>
     </main>
   )
