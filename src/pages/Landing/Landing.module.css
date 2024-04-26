@@ -3,28 +3,3 @@
   align-items: center;
   flex-direction: column;
 }
-
-.slideContainer{
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.navButton{
-  padding: 4px; 
-  opacity: .7;
-  font-size: var(--font-xl);
-}
-
-.navButton:hover{
-  opacity: 1;
-}
-
-.bookselection {  
-  display: flex;
-  overflow-x: hidden;
-  scroll-behavior:smooth;
-  scrollbar-color: var(--main-font) var(--background);
-  scrollbar-width: thin;
-  font-size: var(--font-xs);
-}
