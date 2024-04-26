@@ -5,6 +5,9 @@ import { NavLink, useParams } from "react-router-dom";
 // services
 import * as profileService from '../../services/profileService'
 
+// component
+import List from '../../components/List/List';
+
 // css
 import styles from './ProfileDetails.module.css'
 
@@ -61,18 +64,11 @@ const ProfileDetails = () => {
           <div className={styles.listTitle}>Completed List</div>
           <div className={styles.listContent}>
             {profile.readList.length ? 
-              <>
-                {profile.readList.map(book =>
-                  <div key={book._id} className={styles.book}>
-                    <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
-                    <button onClick={()=>handleRemoveRead(book._id)}><i className="fa-solid fa-eraser"></i></button>
-                  </div>
-                )}
-              </>
+              <List list={profile.readList} handleClick={handleRemoveRead}/>
               :
               <>No Books Available</>
             }
-            </div>
+          </div>
         </div>
         <div className={styles.list}>        
           <div className={styles.listTitle}>Wish List</div>
