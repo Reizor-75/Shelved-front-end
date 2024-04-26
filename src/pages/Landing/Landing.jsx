@@ -37,12 +37,12 @@ const Landing = () => {
     <main className={styles.container}>
       <h1>Recent Releases</h1>
       <div className={styles.slideContainer} > 
-      <div className={styles.navButton} onClick={()=>handleScroll(-220)}><i className="fa-solid fa-circle-arrow-left"></i></div>
-        <div className={styles.bookselection} ref={containerRef}>
-          {recent?.map(book => (
-          <BookCard key={book.OLID} book={book}/>
-        ))}
-        </div>
+        <div className={styles.navButton} onClick={()=>handleScroll(-220)}><i className="fa-solid fa-circle-arrow-left"></i></div>
+          <div className={styles.bookselection} ref={containerRef}>
+            {recent?.map(book => (
+            <BookCard key={book.OLID} book={book}/>
+          ))}
+          </div>
         <div className={styles.navButton} onClick={()=>handleScroll(220)}><i className="fa-solid fa-circle-arrow-right"></i></div>
       </div>
       <h1>Fan Favorites</h1>

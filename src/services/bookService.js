@@ -145,6 +145,17 @@ async function recent(){
   }
 }
 
+async function favorite(){
+  try {
+    const res = await fetch(`${BASE_URL}/favorite`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllBooks,
   getBook,
@@ -156,4 +167,5 @@ export {
   search,
   create,
   recent,
+  favorite
 }
