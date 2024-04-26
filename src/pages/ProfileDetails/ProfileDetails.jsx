@@ -74,19 +74,7 @@ const ProfileDetails = () => {
           <div className={styles.listTitle}>Wish List</div>
           <div className={styles.listContent}>
             {profile.wishList.length ? 
-              <>
-                {profile.wishList.map(book =>
-                  <div key={book._id} className={styles.book}>
-                    <NavLink to={`/books/${book._id}`}>{book.title} </NavLink>
-                    <div>
-                      <button onClick={()=>handleMoveBook(book._id)}>
-                        <i className="fa-solid fa-square-check"></i> 
-                      </button>            
-                      <button onClick={()=>handleRemoveWish(book._id)}><i className="fa-solid fa-heart-circle-xmark"></i></button>
-                    </div>
-                  </div>
-                )}
-              </>
+              <List type={"Wish List"}list={profile.wishList} handleClick={handleRemoveWish} handleMoveBook={handleMoveBook}/>
               :
               <> No Books Available</>
             }
