@@ -16,11 +16,13 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
     <nav>
       <div className={styles.navContainer}>
         <div className={styles.logoContainer}>
-          <img src={shelvedLogo} alt="Shelved Logo" width='100px' className={styles.logoImage}/>
+          <NavLink to="/">
+            <img  src={shelvedLogo} alt="Shelved Logo" width='100px' className={styles.logoImage}/>
+          </NavLink>
           <div className={styles.logoTitle}>Shelved</div>
         </div>
         <div className={styles.links}>
-          <NavLink to="/">Home</NavLink>
+          {/* <NavLink to="/">Home</NavLink> */}
           <NavLink to="/books">Books</NavLink>
           {/* <NavLink to="/search">Search</NavLink> */}
           {user ?
@@ -51,9 +53,9 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
               <i className="fa-solid fa-bars"></i>
 
               <div className={styles.userDropDown}>
-                <NavLink to="/">Home</NavLink>
+                {/* <NavLink to="/">Home</NavLink> */}
                 <NavLink to="/books">Books</NavLink>
-                <NavLink to="/search">Search</NavLink>
+                {/* <NavLink to="/search">Search</NavLink> */}
                 <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
                 <NavLink to="/auth/change-password">Change Password</NavLink>
                 <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
