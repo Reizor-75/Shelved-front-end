@@ -64,7 +64,18 @@ const ProfileDetails = ({user}) => {
               <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
             }
           </div>
-          <NavLink to={`/profiles`}>My Friends</NavLink>
+            {profile.following.length ?
+              <div className={styles.friendsContainer}> 
+                {profile.following.length} Friends
+                {profile.following?.map(friend =>
+                  <>
+                    test
+                  </>
+                )}
+              </div>
+              :
+              <> No Friends</>
+            }
         </div>
       </div>
       <h2>Member since {date}</h2>
