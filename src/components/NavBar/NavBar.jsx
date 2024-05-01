@@ -15,12 +15,12 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
   return (
     <nav>
       <div className={styles.navContainer}>
-        <div className={styles.logoContainer}>
-          <NavLink to="/">
+        <NavLink to="/">
+          <div className={styles.logoContainer}>
             <img  src={shelvedLogo} alt="Shelved Logo" width='100px' className={styles.logoImage}/>
-          </NavLink>
-          <div className={styles.logoTitle}>Shelved</div>
-        </div>
+            <div className={styles.logoTitle}>Shelved</div>
+          </div>
+        </NavLink>
         <div className={styles.links}>
           {/* <NavLink to="/">Home</NavLink> */}
           <NavLink to="/books">Books</NavLink>

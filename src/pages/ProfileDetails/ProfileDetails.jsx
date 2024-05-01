@@ -11,7 +11,7 @@ import List from '../../components/List/List';
 // css
 import styles from './ProfileDetails.module.css'
 
-const ProfileDetails = () => {
+const ProfileDetails = ({user}) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState()
 
@@ -43,6 +43,8 @@ const ProfileDetails = () => {
 
   const date = new Date(profile.createdAt).toLocaleDateString()
 
+  console.log(user)
+
   return (  
     <main className={styles.container}>
       <div className={styles.profileInfo}>
@@ -55,8 +57,15 @@ const ProfileDetails = () => {
           :
           <i className={`fa-solid fa-circle-user ${styles.userIcon}` }></i>
           }
-        <h1 className={styles.profileName}>{profile.name}</h1>
-        <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
+        <div className={styles.profileData}>
+          <div className={styles.editProfileData}>
+            <h1 className={styles.profileName}>{profile.name}</h1>
+            { user?.profile === profileId &&
+              <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
+            }
+          </div>
+          <NavLink to={`/profiles`}>My Friends</NavLink>
+        </div>
       </div>
       <h2>Member since {date}</h2>
       <div className={styles.listContainer}>
