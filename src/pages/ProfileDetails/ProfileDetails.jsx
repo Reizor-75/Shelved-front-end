@@ -7,6 +7,7 @@ import * as profileService from '../../services/profileService'
 
 // component
 import List from '../../components/List/List';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 
 // css
 import styles from './ProfileDetails.module.css'
@@ -66,13 +67,7 @@ const ProfileDetails = ({user}) => {
               <div className={styles.friendsContainer}> 
                 {profile.following.length} Friends
                 {profile.following?.map(friend =>
-                  <>
-                    <img 
-                      src={friend.photo}
-                      alt={`${friend.name}'s avatar`} 
-                      className={styles.friendAvatar}
-                    />
-                  </>
+                  <ProfileCard key={friend._id} profile={friend}/>
                 )}
               </div>
               :
