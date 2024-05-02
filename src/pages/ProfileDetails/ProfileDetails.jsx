@@ -43,8 +43,6 @@ const ProfileDetails = ({user}) => {
 
   const date = new Date(profile.createdAt).toLocaleDateString()
 
-  console.log(user)
-
   return (  
     <main className={styles.container}>
       <div className={styles.profileInfo}>
@@ -69,7 +67,11 @@ const ProfileDetails = ({user}) => {
                 {profile.following.length} Friends
                 {profile.following?.map(friend =>
                   <>
-                    test
+                    <img 
+                      src={friend.photo}
+                      alt={`${friend.name}'s avatar`} 
+                      className={styles.friendAvatar}
+                    />
                   </>
                 )}
               </div>
