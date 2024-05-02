@@ -11,10 +11,10 @@ const ListButton = ({type, handleClickFunction, profile, bookId}) => {
   
   useEffect(() =>{
     if(type === "Read List"){
-      if(profile.readList.some(book => book._id === bookId))setDisabledButton(true)
+      if(profile?.readList.some(book => book._id === bookId))setDisabledButton(true)
     }
     else {
-      if(profile.wishList.some(book => book._id === bookId))setDisabledButton(true)
+      if(profile?.wishList.some(book => book._id === bookId))setDisabledButton(true)
     }
   },[bookId, type, profile])
 
