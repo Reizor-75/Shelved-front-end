@@ -63,16 +63,18 @@ const ProfileDetails = ({user}) => {
               <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
             }
           </div>
-            {profile.following.length ?
-              <div className={styles.friendsContainer}> 
-                {profile.following.length} Friends
-                {profile.following?.map(friend =>
-                  <ProfileCard key={friend._id} profile={friend}/>
-                )}
-              </div>
-              :
-              <> No Friends</>
-            }
+            <div className={styles.friendsContainer}>
+              {profile.following.length} Friends
+              {profile.following.length ? 
+                <>
+                  {profile.following?.map(friend =>
+                    <ProfileCard key={friend._id} profile={friend}/>
+                  )}
+                </>              
+                :
+                <></>
+              }
+            </div>
         </div>
       </div>
       <h2>Member since {date}</h2>

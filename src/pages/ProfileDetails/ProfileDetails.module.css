@@ -17,12 +17,18 @@
 .profileAvatar{
   width: 150px;
   height: 150px;
-  background-color: white;
+  background-color: var(--background);
+  padding: 4px;
   border-radius: 50%;
 }
 
 .profileName{
   padding: 0 8px;
+}
+
+.friendsContainer{  
+  padding: 0 8px;
+  font-weight: 600;
 }
 
 .listContainer{
