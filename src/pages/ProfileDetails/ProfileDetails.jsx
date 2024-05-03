@@ -1,6 +1,7 @@
 // npm modules
 import { useState, useEffect } from 'react'
 import { NavLink, useParams } from "react-router-dom";
+import { Popover } from 'react-tiny-popover';
 
 // services
 import * as profileService from '../../services/profileService'
@@ -15,6 +16,7 @@ import styles from './ProfileDetails.module.css'
 const ProfileDetails = ({user}) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState()
+  const [isPopoverOpen, setIsPopoverOpen]= useState( false )
 
   useEffect(() =>{
     const fetchProfile= async () => {
@@ -39,6 +41,10 @@ const ProfileDetails = ({user}) => {
     setProfile(data)
   }
 
+  const handleClick = async () =>{
+    setIsPopoverOpen(true)
+  } 
+
   if(!profile)
     return <main className={styles.container}><h1>Loading...</h1></main>
 
@@ -59,8 +65,22 @@ const ProfileDetails = ({user}) => {
         <div className={styles.profileData}>
           <div className={styles.editProfileData}>
             <h1 className={styles.profileName}>{profile.name}</h1>
-            { user?.profile === profileId &&
+            { user?.profile === profileId ?
               <NavLink to="edit" state={profile}><i className="fa-solid fa-pen-to-square"></i></NavLink>
+              :
+              <Popover 
+                isOpen={isPopoverOpen}
+                transform={{ top: 40, left: 20 }}
+                transformMode='relative'
+                onClickOutside={() => setIsPopoverOpen(false)}
+                content={() => ( 
+                  <div className={styles.popoverMessage}>
+                    Friend Added
+                  </div>
+                )} 
+              >      
+                <button onClick={handleClick}> <i className="fa-solid fa-user-plus"></i> </button>
+              </Popover>
             }
           </div>
             <div className={styles.friendsContainer}>

@@ -1,5 +1,8 @@
 .container {
   padding-bottom: 60px;
+  i{
+    color: var(--main-font);
+  }
 }
 
 .profileInfo{
@@ -59,6 +62,19 @@
 
 .userIcon{
   font-size: 100px;
+}
+
+
+.popoverMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .9;
+  background-color:var(--main-font);
+  padding: 8px;
+  font-size: large;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 450px){
