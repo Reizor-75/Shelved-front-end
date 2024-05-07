@@ -41,7 +41,7 @@ const ProfileDetails = ({user}) => {
     setProfile(data)
   }
 
-  const handleClick = async () =>{
+  const handleAddFriend = async () =>{
     setIsPopoverOpen(true)
   } 
 
@@ -79,7 +79,7 @@ const ProfileDetails = ({user}) => {
                   </div>
                 )} 
               >      
-                <button onClick={handleClick}> <i className="fa-solid fa-user-plus"></i> </button>
+                <button onClick={handleAddFriend}> <i className="fa-solid fa-user-plus"></i> </button>
               </Popover>
             }
           </div>

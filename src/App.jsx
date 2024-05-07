@@ -37,7 +37,7 @@ function App() {
       const data = await profileService.getProfile(user.profile)
       setCurProfile(data)
     }
-    fetchProfile()
+    if(user) fetchProfile()
   },[user])
 
   const handleLogout = () => {
