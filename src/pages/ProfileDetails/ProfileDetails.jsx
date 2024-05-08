@@ -43,6 +43,7 @@ const ProfileDetails = ({user}) => {
 
   const handleAddFriend = async () =>{
     setIsPopoverOpen(true)
+    await profileService.addFriend(profileId)
   } 
 
   if(!profile)

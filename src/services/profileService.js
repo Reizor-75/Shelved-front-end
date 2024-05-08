@@ -113,7 +113,7 @@ async function updateProfile(formData, photoData){
 
 async function addFriend(profileId){
   try {
-    const res = await fetch(`${BASE_URL}/addFriend`, {
+    const res = await fetch(`${BASE_URL}/friend/${profileId}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -134,6 +134,6 @@ export {
   deleteRead,
   deleteWish,
   moveBook,
-  updateProfile
+  updateProfile,
   addFriend,
 }
