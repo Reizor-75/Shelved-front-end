@@ -85,7 +85,12 @@ const ProfileDetails = ({user}) => {
             }
           </div>
             <div className={styles.friendsContainer}>
-              {profile.following.length} Friends
+              {profile.following.length}
+              {profile.following.length === 1 ?
+                <> Friend</>
+                :
+                <> Friends</>
+              }
               {profile.following.length ? 
                 <>
                   {profile.following?.map(friend =>
