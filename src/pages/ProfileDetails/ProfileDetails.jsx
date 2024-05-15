@@ -97,14 +97,12 @@ const ProfileDetails = ({user}) => {
                 }
               </NavLink>
               
-              {profile.following.length ? 
+              {profile.following.length && 
                 <>
                   {profile.following?.map(friend =>
                     <ProfileCard key={friend._id} profile={friend}/>
                   )}
-                </>              
-                :
-                <></>
+                </>
               }
             </div>
         </div>
