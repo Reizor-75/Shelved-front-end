@@ -87,12 +87,16 @@ const ProfileDetails = ({user}) => {
             }
           </div>
             <div className={styles.friendsContainer}>
-              {profile.following.length}
-              {profile.following.length === 1 ?
-                <> Friend</>
-                :
-                <> Friends</>
-              }
+              
+              <NavLink to="friends" state={profile}>
+                {profile.following.length}
+                {profile.following.length === 1 ?
+                  <> Friend</>
+                  :
+                  <> Friends</>
+                }
+              </NavLink>
+              
               {profile.following.length ? 
                 <>
                   {profile.following?.map(friend =>

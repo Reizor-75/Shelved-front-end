@@ -86,7 +86,7 @@ function App() {
           }
         />
         <Route
-          path="/profiles/friends"
+          path="/profiles/:profileId/friends"
           element={
             <ProtectedRoute user={user}>
               <Friends user={user}/>
