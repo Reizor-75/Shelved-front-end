@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Friends from './pages/Friends/Friends'
 import Books from './pages/Books/Books'
 import BookDetails from './pages/BookDetails/BookDetails'
 import Search from './pages/Search/Search'
@@ -81,6 +82,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditProfile user={user}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profiles/friends"
+          element={
+            <ProtectedRoute user={user}>
+              <Friends user={user}/>
             </ProtectedRoute>
           }
         />
