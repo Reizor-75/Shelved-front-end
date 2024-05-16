@@ -8,7 +8,7 @@ import * as profileService from '../../services/profileService'
 
 // component
 import List from '../../components/List/List';
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import ProfileIcon from '../../components/ProfileIcon/ProfileIcon';
 
 // css
 import styles from './ProfileDetails.module.css'
@@ -100,7 +100,7 @@ const ProfileDetails = ({user}) => {
               {profile.following.length && 
                 <>
                   {profile.following?.map(friend =>
-                    <ProfileCard key={friend._id} profile={friend}/>
+                    <ProfileIcon key={friend._id} profile={friend}/>
                   )}
                 </>
               }

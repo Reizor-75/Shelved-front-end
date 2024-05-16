@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 
 // css
-import styles from "./ProfileCard.module.css"
+import styles from "./ProfileIcon.module.css"
 
 const ProfileCard = ({profile}) => {
   return ( 
@@ -13,10 +13,8 @@ const ProfileCard = ({profile}) => {
         alt={`${profile.name}'s avatar`} 
         className={styles.profileAvatar}
       />
-      <div className={styles.profileInfo}>
-        {profile.name}
-      </div>
     </NavLink>
+    
   );
 }
 

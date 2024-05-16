@@ -1,5 +1,5 @@
 // components
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import ProfileIcon from '../ProfileIcon/ProfileIcon';
 
 // css
 import styles from './Review.module.css'
@@ -26,7 +26,7 @@ const Review = ({user, review, handleEditReview, handleDeleteReview}) => {
       <div className={styles.bottomRow}>
         <div className={styles.reviewerInfo}>
           {review.reviewer.name}
-          <ProfileCard profile={review.reviewer} />
+          <ProfileIcon profile={review.reviewer} />
         </div>
         {review.reviewer._id === user?.profile &&
           <div className={styles.reviewerButtons}>

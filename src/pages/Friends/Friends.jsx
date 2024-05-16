@@ -2,7 +2,7 @@
 import { useLocation } from "react-router-dom";
 
 //component
-import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import ProfileIcon from "../../components/ProfileIcon/ProfileIcon";
 
 //css
 import styles from "./Friends.module.css"
@@ -13,12 +13,12 @@ const Friends = () => {
 console.log(state)
   return (      
     <main className={styles.container}>
-      {state.name}'s Friends
+      <div className={styles.friendsTitle}>{state.name}'s Friends</div>
 
       {state.following ? 
         <>
           {state.following.map(friend =>
-            <ProfileCard key={friend._id} profile={friend}/>
+            <ProfileIcon key={friend._id} profile={friend}/>
           )}
         </>
         : 
