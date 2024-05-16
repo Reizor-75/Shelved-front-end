@@ -1,0 +1,22 @@
+.card{
+  display: flex;
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.profileAvatar{
+  width: 150px;
+  background-color: var(--background);
+  border-radius: 50%;
+}
+
+.profileInfo{
+  font-size: var(--font-l);
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+br{
+  background-color: var(--main-font);
+}
