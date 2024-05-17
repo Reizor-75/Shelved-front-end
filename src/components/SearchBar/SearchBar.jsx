@@ -31,7 +31,7 @@ const SearchBar = ({handleSearch}) => {
 
   return ( 
     <div className={styles.searchBar}>
-      <form autoComplete="off" onSubmit={handleSubmit} className='form'>
+      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <select
           name="category"          
           onChange={handleChange}
