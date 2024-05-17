@@ -12,6 +12,10 @@ import styles from './Books.module.css'
 const Books = () => {
   const [books, setBooks] = useState([])
 
+  const [formData, setFormData] = useState({     
+    sortBy: "title"
+  })
+
   useEffect(() => {
     const fetchBooks = async () => {
       const booksData = await bookService.getAllBooks()
@@ -20,6 +24,10 @@ const Books = () => {
     fetchBooks()
   }, [])
 
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
   if (!books.length) {
     return <main className={styles.container}><h1>Loading Books..</h1></main>
   }
@@ -27,11 +35,11 @@ const Books = () => {
   return (  
     <main className={styles.container}>
       <div className={styles.booksHeader}>
-        <h1>Books</h1>
+        <div className={styles.pageTitle}>Books</div>
         <form autoComplete="off" className={styles.form}>
           <select
-            name="category"          
-            // onChange={handleChange}
+            name="sortBy"          
+            onChange={handleChange}
             defaultValue="title"
             className={styles.sortSelect}
           >

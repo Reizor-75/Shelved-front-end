@@ -3,12 +3,18 @@
   flex-wrap: wrap;
 }
 
+.pageTitle{
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+
 .booksHeader{
   display: flex;
   align-items: center;
 }
 
 select.sortSelect{
+  height: 30px;
   border: none;
   border-radius: 4px;
   margin: 0;
