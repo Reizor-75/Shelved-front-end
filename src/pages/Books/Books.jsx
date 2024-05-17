@@ -26,7 +26,21 @@ const Books = () => {
   
   return (  
     <main className={styles.container}>
-      <h1>Books</h1>
+      <div className={styles.booksHeader}>
+        <h1>Books</h1>
+        <form autoComplete="off" className={styles.form}>
+          <select
+            name="category"          
+            // onChange={handleChange}
+            defaultValue="title"
+            className={styles.sortSelect}
+          >
+            <option value="title">Title: A-Z</option>
+            <option value="author">Author: A-Z</option>
+            <option value="recent">Recent</option>
+          </select>
+        </form>
+      </div>
       <div className={styles.cardContainer}>
         {books.map(book => (
           <BookCard key={book.OLID} book={book}/>
