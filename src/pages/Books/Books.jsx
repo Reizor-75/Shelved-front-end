@@ -12,10 +12,6 @@ import styles from './Books.module.css'
 const Books = () => {
   const [books, setBooks] = useState([])
 
-  const [formData, setFormData] = useState({     
-    sortBy: "title"
-  })
-
   useEffect(() => {
     const fetchBooks = async () => {
       const booksData = await bookService.getAllBooks()
@@ -25,7 +21,18 @@ const Books = () => {
   }, [])
 
   const handleChange = evt => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    if(evt.target.value === "title"){
+      setBooks(books.sort((a,b) => (a.name > b.name) ? 1:-1))
+      console.log(books)
+    }
+    else if(evt.target.value === "author"){
+      setBooks(books.sort((a,b) => (a.authors[0] > b.authors[0]) ? 1:-1))
+      console.log(books)
+    }
+    else{
+      setBooks(books.sort((a,b) => (a.firstPublished - b.firstPublished )))
+      console.log(books)
+    }
   }
 
   if (!books.length) {
@@ -40,12 +47,12 @@ const Books = () => {
           <select
             name="sortBy"          
             onChange={handleChange}
-            defaultValue="title"
+            defaultValue="recent"
             className={styles.sortSelect}
           >
+            <option value="recent">Recent</option>
             <option value="title">Title: A-Z</option>
             <option value="author">Author: A-Z</option>
-            <option value="recent">Recent</option>
           </select>
         </form>
       </div>
