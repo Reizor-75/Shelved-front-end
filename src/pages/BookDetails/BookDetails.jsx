@@ -74,7 +74,7 @@ const BookDetails = ({user, profile}) => {
     <main className={styles.container}>
       <div className={styles.bookContainer}>
         {book.coverPhoto ?
-          <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} className={StyleSheet.bookCover}/>
+          <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} className={styles.bookCover}/>
           :
           <div className={styles.bookCover}>{book.title}</div>
           }
