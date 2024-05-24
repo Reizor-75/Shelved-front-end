@@ -38,7 +38,13 @@ const BookDetails = ({user, profile}) => {
   
   const averageRating = (reviews) =>{
     const stars = []
-    reviews    
+    let average = reviews.reduce((a,b) => a+b.rating, 0)/reviews.length    
+    for(let i = 0; i < Math.floor(average); i++){
+      stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
+    }
+    for(let i = Math.floor(average); i < 5; i++){
+      stars.push(<i className="fa-solid fa-star"></i>)
+    }
     return stars;
   }
 
@@ -101,7 +107,7 @@ const BookDetails = ({user, profile}) => {
           <div className={styles.bookAuthors}> by {book.authors[0]}
           <div className={styles.bookPublished}>Published in {date}</div>       
           </div>
-          {averageRating(book.reviews)}
+          <div className={styles.averageStars}>{averageRating(book.reviews)}</div>
           <div className={styles.bookDescription} >
             <p>
             {book.description ? book.description: <> No Synponsis Avaiable</>}

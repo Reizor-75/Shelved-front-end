@@ -30,18 +30,21 @@ button{
   width: 100%;
 }
 
-  .bookCover{
-    width: 35%;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    background-image: url('../../assets/BookTemplate.svg');
-    background-position: left bottom;
-    font-size: var(--font-xl);
-    font-weight: 700;
-    text-align: center;  
+.bookCover{
+  width: 35%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  background-image: url('../../assets/BookTemplate.svg');
+  background-position: left bottom;
+  font-size: var(--font-xl);
+  font-weight: 700;
+  text-align: center;  
   }
 
+#filled{
+  color: var(--main-contrast)
+}
 
 .bookInfo{  
   display: flex;
