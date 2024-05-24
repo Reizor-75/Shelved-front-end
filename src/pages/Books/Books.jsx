@@ -23,16 +23,14 @@ const Books = () => {
   const handleChange = evt => {
     if(evt.target.value === "title"){
       setBooks(books.sort((a,b) => (a.name > b.name) ? 1:-1))
-      console.log(books)
     }
     else if(evt.target.value === "author"){
       setBooks(books.sort((a,b) => (a.authors[0] > b.authors[0]) ? 1:-1))
-      console.log(books)
     }
     else{
       setBooks(books.sort((a,b) => (a.firstPublished - b.firstPublished )))
-      console.log(books)
     }
+    console.log(books)
   }
 
   if (!books.length) {

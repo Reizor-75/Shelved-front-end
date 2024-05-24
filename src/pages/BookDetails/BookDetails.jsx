@@ -73,7 +73,11 @@ const BookDetails = ({user, profile}) => {
   return (  
     <main className={styles.container}>
       <div className={styles.bookContainer}>
-        <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} />
+        {book.coverPhoto ?
+          <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} className={StyleSheet.bookCover}/>
+          :
+          <div className={styles.bookCover}>{book.title}</div>
+          }
         <div className={styles.bookInfo}>
           <div className={styles.bookTitle}> 
             {book.title} 
@@ -98,7 +102,11 @@ const BookDetails = ({user, profile}) => {
           <div className={styles.bookPublished}>Published in {date}</div>       
           </div>
           {averageRating(book.reviews)}
-          <div className={styles.bookDescription} ><p>{book.description}</p></div>     
+          <div className={styles.bookDescription} >
+            <p>
+            {book.description ? book.description: <> No Synponsis Avaiable</>}
+            </p>
+          </div>     
         </div>
         
       </div>

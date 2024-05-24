@@ -28,11 +28,20 @@ button{
   padding: 16px;
   font-size: var(--font-m);
   width: 100%;
-  img{
-    width: 35%;
-    height: min-content;
-  }
 }
+
+  .bookCover{
+    width: 35%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../assets/BookTemplate.svg');
+    background-position: left bottom;
+    font-size: var(--font-xl);
+    font-weight: 700;
+    text-align: center;  
+  }
+
 
 .bookInfo{  
   display: flex;
