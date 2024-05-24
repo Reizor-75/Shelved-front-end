@@ -38,7 +38,9 @@ const BookDetails = ({user, profile}) => {
   
   const averageRating = (reviews) =>{
     const stars = []
-    let average = reviews.reduce((a,b) => a+b.rating, 0)/reviews.length    
+    let average = 0
+    
+    if(reviews.length) average = reviews.reduce((a,b) => a+b.rating, 0)/reviews.length
     for(let i = 0; i < Math.floor(average); i++){
       stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
     }
