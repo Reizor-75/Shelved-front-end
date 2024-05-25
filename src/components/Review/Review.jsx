@@ -8,10 +8,10 @@ const Review = ({user, review, handleEditReview, handleDeleteReview}) => {
   const renderStars = (numOfStars) =>{
     let stars = []
     for(let i =0; i < numOfStars; i++){
-      stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
+      stars.push(<i className="fa-solid fa-star" id={styles.filled} key={i}></i>)
     }
     for(let i = numOfStars; i < 5; i++){
-      stars.push(<i className="fa-solid fa-star"></i>)
+      stars.push(<i className="fa-solid fa-star" key={i}></i>)
     }
     return stars;
   }
