@@ -21,8 +21,11 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
             <div className={styles.logoTitle}>Shelved</div>
           </div>
         </NavLink>
+        
+        <SearchBar handleSearch={ handleSearch }/>
+
         <div className={styles.links}>
-          <NavLink to="/books">Books</NavLink>
+          <NavLink to="/books"><i className="fa-solid fa-book" id={styles.bookIcon}></i></NavLink>
           {user ?
             <div className={styles.userLinks}>
                 <i className="fa-solid fa-circle-user"></i>
@@ -67,7 +70,6 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
             </div>
           }
         </div>
-        <SearchBar handleSearch={ handleSearch }/>
       </div>
     </nav>
   )

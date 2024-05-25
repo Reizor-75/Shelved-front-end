@@ -25,13 +25,17 @@
   color: var(--main-contrast);
 }
 
+#bookIcon{
+  color: var(--main-contrast);
+}
+
 .links{
   display: flex;
   align-items: center;
   font-size: var(--font-xs);
 }
 
-.links> *{
+.links > *{
   padding: 8px;
   padding-bottom: 0;
   font-weight: 700;
