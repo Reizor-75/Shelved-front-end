@@ -18,6 +18,7 @@ const BookDetails = ({user, profile}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
   const [edit, setEdit] = useState( false )
+
   useEffect(() =>{
     const fetchBook= async () => {
       const data = await bookService.getBook(bookId)
@@ -39,13 +40,13 @@ const BookDetails = ({user, profile}) => {
   const averageRating = (reviews) =>{
     const stars = []
     let average = 0
-    
+
     if(reviews.length) average = reviews.reduce((a,b) => a+b.rating, 0)/reviews.length
     for(let i = 0; i < Math.floor(average); i++){
-      stars.push(<i className="fa-solid fa-star" id={styles.filled}></i>)
+      stars.push(<i className="fa-solid fa-star" id={styles.filled} key={i}></i>)
     }
     for(let i = Math.floor(average); i < 5; i++){
-      stars.push(<i className="fa-solid fa-star"></i>)
+      stars.push(<i className="fa-solid fa-star" key={i}></i>)
     }
     return stars;
   }
@@ -144,7 +145,7 @@ const BookDetails = ({user, profile}) => {
             </div>
           )
           :
-          <div className={styles.noReview} >No Reviews available</div>
+          <div className={styles.noReview}> No Reviews available</div>
         }      
       </div>
     </main>
