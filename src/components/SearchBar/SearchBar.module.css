@@ -11,7 +11,6 @@ select.typeSelect{
   box-shadow: var(--shadow);
 }
 
-
 input.searchInput{
   margin: 0;
   border-radius: 0;
@@ -26,6 +25,10 @@ button.searchButton{
   margin: 0;
   padding: 4px;
   border-radius: 0 4px 4px 0;
+}
+
+i{
+  color: var(--main-font);
 }
 
 form > *{

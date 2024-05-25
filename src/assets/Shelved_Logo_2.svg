@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="126.88029mm"
+   height="118.37759mm"
+   viewBox="0 0 126.88029 118.37759"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect5"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-37.989526,-78.74336)">
+    <path
+       style="fill:#bf5d39;fill-opacity:0;stroke:#bf5d39;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4"
+       width="35.459045"
+       height="113.37759"
+       x="40.489525"
+       y="81.243362"
+       inkscape:path-effect="#path-effect5"
+       sodipodi:type="rect"
+       d="m 49.63572,81.243362 h 17.166655 c 5.066992,0 9.146195,4.079204 9.146195,9.146196 v 95.085192 c 0,5.067 -4.079203,9.1462 -9.146195,9.1462 H 49.63572 c -5.066992,0 -9.146195,-4.0792 -9.146195,-9.1462 V 90.389558 c 0,-5.066992 4.079203,-9.146196 9.146195,-9.146196 z"
+       ry="9.1461954"
+       inkscape:export-filename="Sehelved_Logo_2.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#bf5d39;fill-opacity:0;stroke:#bf5d39;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4-5"
+       width="35.459045"
+       height="76.295708"
+       x="83.70015"
+       y="118.32524"
+       ry="11.960409" />
+    <rect
+       style="fill:#bf5d39;fill-opacity:0;stroke:#bf5d39;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4-52"
+       width="35.459045"
+       height="104.69003"
+       x="126.91077"
+       y="89.682182"
+       sodipodi:type="rect"
+       ry="9.8568573" />
+  </g>
+</svg>

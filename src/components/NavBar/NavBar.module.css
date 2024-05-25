@@ -15,10 +15,14 @@
   align-items: flex-end;
 }
 
+.logoImage{
+  width: 50px;
+  margin: 8px;
+}
+
 .logoTitle{
-  padding: 8px;
-  padding-bottom: 0;
   font-size: var(--font-l);
+  color: var(--main-contrast);
 }
 
 .links{
@@ -41,6 +45,7 @@
   border-radius: 8px;
   i{
     font-size: var(--font-l);
+    color: var(--main--font)
   }
 }
 

@@ -8,7 +8,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import styles from './NavBar.module.css'
 
 // assets
-import shelvedLogo from "../../assets/Shelved_Logo.svg"
+import shelvedLogo from "../../assets/Shelved_Logo_2.svg"
 
 const NavBar = ({ user, handleLogout, handleSearch }) => {
   
@@ -17,7 +17,7 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
       <div className={styles.navContainer}>
         <NavLink to="/">
           <div className={styles.logoContainer}>
-            <img  src={shelvedLogo} alt="Shelved Logo" width='100px' className={styles.logoImage}/>
+            <img src={shelvedLogo} alt="Shelved Logo" className={styles.logoImage}/>
             <div className={styles.logoTitle}>Shelved</div>
           </div>
         </NavLink>
