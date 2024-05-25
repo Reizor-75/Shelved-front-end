@@ -17,31 +17,33 @@ button{
 }
 
 .addToList:hover{
-  /* color: white; */
   background-color: var(--background);
 }
 
 .bookContainer{
   display: flex;
-  /* background-color: var(--background); */
   border-radius: 0 0 8px 8px;
   padding: 16px;
   font-size: var(--font-m);
   width: 100%;
 }
 
-.bookCover{
+.coverContainer{
   width: 35%;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  background-image: url('../../assets/BookTemplate.svg');  
-  background-size: 100%;
-  background-position: left bottom;
+  position: relative;
   font-size: var(--font-xl);
   font-weight: 700;
-  text-align: center;  
-  }
+}
+
+.bookCover{
+  width: 100%;
+}
+
+.bookCoverTitle{
+  position: absolute;
+  top: 20%; 
+  left: 15%;
+}
 
 #filled{
   color: var(--main-contrast)
@@ -97,10 +99,9 @@ button{
     max-height: 400px;
   }
   
-  .bookCover{
-    width: 40%;
-    font-size: var(--font-m);
-    font-weight: 700;
+  .coverContainer{
+    min-width: 100px;
+    font-size: var(--font-xs);
   }
 
   .bookInfo{

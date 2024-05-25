@@ -14,6 +14,8 @@ import Review from '../../components/Review/Review';
 import EditReviewForm from '../../components/EditReviewForm/EditReviewForm';
 import ListButton from '../../components/ListButton/ListButton';
 
+import CoverPlaceholder from '../../assets/BookTemplate.svg'
+
 const BookDetails = ({user, profile}) => {
   const { bookId } = useParams()
   const [book, setBook] = useState()
@@ -82,11 +84,16 @@ const BookDetails = ({user, profile}) => {
   return (  
     <main className={styles.container}>
       <div className={styles.bookContainer}>
-        {book.coverPhoto ?
-          <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} className={styles.bookCover}/>
-          :
-          <div className={styles.bookCover}>{book.title}</div>
+        <div className={styles.coverContainer}>
+          {book.coverPhoto ?
+            <img src={`https://covers.openlibrary.org/b/OLID/${book.coverPhoto}-L.jpg`} alt={`${book.title}'s Cover`} className={styles.bookCover}/>
+            :
+            <>
+              <div className={styles.bookCoverTitle}>{book.title}</div>
+              <img src={CoverPlaceholder} alt="Book Cover Placeholder" className={styles.bookCover}/> 
+            </>
           }
+        </div>
         <div className={styles.bookInfo}>
           <div className={styles.bookTitle}> 
             {book.title} 
@@ -117,8 +124,8 @@ const BookDetails = ({user, profile}) => {
             </p>
           </div>     
         </div>
-        
       </div>
+
       <div className={styles.reviewContainerHeader}>Reviews</div>         
       {user && !book.reviews?.find(review => review.reviewer._id === user.profile) &&   
         <ReviewForm 
