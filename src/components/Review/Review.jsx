@@ -25,7 +25,6 @@ const Review = ({user, review, handleEditReview, handleDeleteReview}) => {
       <div className={styles.reviewContent}>{review.content}</div>
       <div className={styles.bottomRow}>
         <div className={styles.reviewerInfo}>
-          {review.reviewer.name}
           <ProfileIcon profile={review.reviewer} />
         </div>
         {review.reviewer._id === user?.profile &&
