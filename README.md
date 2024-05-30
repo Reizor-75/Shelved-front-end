@@ -1,4 +1,4 @@
-# <img src="./src/assets/Shelved_Logo_V2.svg" alt="Noted Icon" width="30"/>Shelved - Front End
+# <img src="./src/assets/Shelved_Logo_V2.svg" alt="Shelved Icon" width="30"/>Shelved - Front End
 
 This is a MERN Stack application that includes JWT Authentication.
 
