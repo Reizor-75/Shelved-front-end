@@ -41,6 +41,7 @@ button{
 
 .bookCoverTitle{
   position: absolute;
+  color: var(--main-contrast);
   top: 20%; 
   left: 15%;
 }
