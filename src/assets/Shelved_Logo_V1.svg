@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="211.66667mm"
-   height="211.66666mm"
-   viewBox="0 0 211.66668 211.66665"
+   width="150.66275mm"
+   height="123.46757mm"
+   viewBox="0 0 150.66276 123.46756"
    version="1.1"
    id="svg1"
    inkscape:export-filename="Shelved_Logo_V2.svg"
@@ -50,7 +50,7 @@
      inkscape:label="Left Book"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-7.5549156,-31.172498)">
+     transform="translate(-38.121586,-77.758292)">
     <path
        style="fill:#bad9c8;fill-opacity:1;stroke:#435944;stroke-width:10;stroke-dasharray:none;stroke-opacity:1"
        id="rect4"
@@ -85,7 +85,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Center Book"
-     transform="translate(19.84375,46.302083)">
+     transform="translate(-10.72292,-0.28371102)">
     <rect
        style="display:inline;fill:#bad9c8;fill-opacity:1;stroke:#435944;stroke-width:10;stroke-dasharray:none;stroke-opacity:1"
        id="rect4-5"
@@ -115,7 +115,7 @@
      id="layer2"
      inkscape:label="Right Book"
      sodipodi:insensitive="true"
-     transform="translate(19.84375,46.302083)">
+     transform="translate(-10.72292,-0.28371102)">
     <rect
        style="display:inline;fill:#bad9c8;fill-opacity:1;stroke:#435944;stroke-width:10;stroke-dasharray:none;stroke-opacity:1"
        id="rect4-52"

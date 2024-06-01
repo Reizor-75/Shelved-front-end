@@ -21,7 +21,8 @@
 }
 
 .logoTitle{
-  color: var(--main-contrast);
+  font-weight: 700;
+  color: var(--main-font);
 }
 
 .links{
