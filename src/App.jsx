@@ -14,6 +14,7 @@ import Friends from './pages/Friends/Friends'
 import Books from './pages/Books/Books'
 import BookDetails from './pages/BookDetails/BookDetails'
 import Search from './pages/Search/Search'
+import Footer from './components/Footer/Footer'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -122,6 +123,8 @@ function App() {
           element={<Search user={user} search={search}/> }
         />
       </Routes>
+
+      <Footer></Footer>
     </>
   )
 }
