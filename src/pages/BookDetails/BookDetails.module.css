@@ -16,10 +16,6 @@ button{
   }
 }
 
-button:hover{
-  background-color: var(--sub-font);
-}
-
 .addToList:hover{
   background-color: var(--background);
 }
