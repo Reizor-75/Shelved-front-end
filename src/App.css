@@ -1,7 +1,8 @@
 :root{
-  --background: #bad9c8;
-  --main-contrast: #ef8b81;
+  --background: #d9c1b4;
+  --main-contrast: #f29966;
   --main-font: #435944;
+  --sub-font: #f27d72;
   --shadow:2px 2px 4px #000000aa;
   --font-xl: 2em;
   --font-l: 1.6em; 

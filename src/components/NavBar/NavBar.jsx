@@ -8,7 +8,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import styles from './NavBar.module.css'
 
 // assets
-import shelvedLogo from "../../assets/Shelved_Logo_V1.svg"
+import shelvedLogo from "../../assets/Shelved_Logo_V6.svg"
 
 const NavBar = ({ user, handleLogout, handleSearch }) => {
   

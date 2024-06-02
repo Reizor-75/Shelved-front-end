@@ -16,6 +16,10 @@ button{
   }
 }
 
+button:hover{
+  background-color: var(--sub-font);
+}
+
 .addToList:hover{
   background-color: var(--background);
 }
@@ -47,7 +51,7 @@ button{
 }
 
 #filled{
-  color: var(--main-contrast)
+  color: var(--sub-font)
 }
 
 .bookInfo{  

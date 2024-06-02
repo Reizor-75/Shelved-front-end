@@ -92,7 +92,7 @@ textarea{
 
 .starSelect:not(:hover) label input:checked ~ .icon,
 .starSelect:hover label:hover .icon {
-  color: var( --main-contrast );
+  color: var(--sub-font);
 }
 
 .submitReivew{
