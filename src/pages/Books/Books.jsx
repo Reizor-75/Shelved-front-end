@@ -34,7 +34,11 @@ const Books = () => {
   }
 
   if (!books.length) {
-    return <main className={styles.container}><h1>Loading Books..</h1></main>
+    return (
+      <main className={styles.container}>
+        <div className={styles.error}>Loading Catalog..</div>
+      </main>
+    )
   }
   
   return (  

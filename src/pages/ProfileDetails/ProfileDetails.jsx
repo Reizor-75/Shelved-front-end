@@ -47,7 +47,11 @@ const ProfileDetails = ({user}) => {
   } 
 
   if(!profile)
-    return <main className={styles.container}><h1>Loading...</h1></main>
+    return (
+      <main className={styles.container}>
+        <div className={styles.error}>Loading Profile...</div>
+      </main>
+    )
 
   const date = new Date(profile.createdAt).toLocaleDateString()
 

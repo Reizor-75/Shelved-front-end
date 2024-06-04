@@ -19,7 +19,11 @@ const Profiles = () => {
   }, [])
 
   if (!profiles.length) {
-    return <main className={styles.container}><h1>Loading...</h1></main>
+    return (
+      <main className={styles.container}>
+        <div className={styles.error}>Loading Profiles...</div>
+      </main>
+    )
   }
   
   return (

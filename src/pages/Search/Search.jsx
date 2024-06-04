@@ -13,10 +13,11 @@ import styles from './Search.module.css'
 const Search = ({search}) => {
 
   if(!search){
-    return <h1>
-      whoops
-      {search}
-    </h1>
+    return (
+      <main className={styles.container}>
+        <div className={styles.error}>Loading Search Results...</div>
+      </main>
+    )
   }
   return (  
     <main className={styles.container}>

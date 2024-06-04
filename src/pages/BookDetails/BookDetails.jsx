@@ -31,9 +31,11 @@ const BookDetails = ({user, profile}) => {
   
   if(!book){
     return (
-      <>
-        <h1>No Such Book</h1>
-      </>
+      <main className={styles.container}>
+        <div className={styles.error}>
+          Book Not Available
+        </div>
+      </main>
     )
   }
 

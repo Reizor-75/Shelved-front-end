@@ -4,6 +4,7 @@
   font-size: var(--font-xl);
   font-weight: 700;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
   padding: 24px;
@@ -30,7 +31,7 @@
   align-items: center;
   font-size: var(--font-xs);
   i{    
-    color: var(--sub-font);
+    color: var(--main-font);
   }
 }
 
@@ -59,7 +60,7 @@
     background-color: var(--main-contrast);
     a:hover{
       color: var(--sub-font);
-      background-color: var(--background);
+      background-color: white;
     }
   }
 }
@@ -79,6 +80,9 @@
 
 .linksMobile{
   display: none;
+  i{    
+    color: var(--main-font);
+  }
 }
 
 @media screen and (max-width: 860px){

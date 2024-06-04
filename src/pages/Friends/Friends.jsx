@@ -21,7 +21,7 @@ const Friends = () => {
           )}
         </>
         : 
-        <>No friends</>
+        <>No friends Available</>
       }
 
     </main>

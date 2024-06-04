@@ -71,6 +71,12 @@ button:hover{
   background-color: var(--sub-font);
 }
 
+.error{
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-xl);
+  font-weight: 800;
+}
 
 main{
   width: 60%;
