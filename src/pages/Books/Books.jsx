@@ -21,16 +21,17 @@ const Books = () => {
   }, [])
 
   const handleChange = evt => {
+    let sortedBooks = [...books]
     if(evt.target.value === "title"){
-      setBooks(books.sort((a,b) => (a.name > b.name) ? 1:-1))
+      sortedBooks.sort((a,b) => (a.name > b.name) ? 1:-1)
     }
     else if(evt.target.value === "author"){
-      setBooks(books.sort((a,b) => (a.authors[0] > b.authors[0]) ? 1:-1))
+      sortedBooks.sort((a,b) => (a.authors[0] > b.authors[0]) ? 1:-1)
     }
     else{
-      setBooks(books.sort((a,b) => (a.firstPublished - b.firstPublished )))
+      sortedBooks.sort((a,b) => (a.firstPublished - b.firstPublished ))
     }
-    console.log(books)
+    setBooks(sortedBooks)
   }
 
   if (!books.length) {
@@ -40,23 +41,20 @@ const Books = () => {
       </main>
     )
   }
-  
+
   return (  
     <main className={styles.container}>
       <div className={styles.booksHeader}>
         <div className={styles.pageTitle}>Books</div>
-        <form autoComplete="off" className={styles.form}>
-          <select
-            name="sortBy"          
-            onChange={handleChange}
-            defaultValue="recent"
-            className={styles.sortSelect}
-          >
-            <option value="recent">Recent</option>
-            <option value="title">Title: A-Z</option>
-            <option value="author">Author: A-Z</option>
-          </select>
-        </form>
+        <select
+          name="sortBy"
+          onChange={handleChange}
+          className={styles.sortSelect}
+        >
+          <option value="recent">Recent</option>
+          <option value="title">Title: A-Z</option>
+          <option value="author">Author: A-Z</option>
+        </select>
       </div>
       <div className={styles.cardContainer}>
         {books.map(book => (
