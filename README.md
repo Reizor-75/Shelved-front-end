@@ -1,4 +1,8 @@
-# <img src="./src/assets/Shelved_Logo_V2.svg" alt="Shelved Icon" width="30"/>Shelved - Front End
+# <img src="./src/assets/Shelved_Logo_V6.svg" alt="Shelved Icon" width="30"/> Shelved - Front End
+
+<img src="./src/assets/Landing.png" alt="Landing Page" height="500"/>
+<img src="./src/assets/Mobile_catalog.png" alt="Landing Page" height="500"/>
+
 **Shelved** is a book review application made using React on the front end and JavaScript on the back end. Users come to **Shelved** to look into books they are interested in as well as books they've read before. User are encourage to rate and review books they've read to create discourse amongst all users.
 
 Users can track novels to two lists: Favorites and Future Reads. With these lists, users can express their reading preferences to potiental followers. 
@@ -41,6 +45,7 @@ Shelved's logo and default assets are created by yours truly.
 - Fly.io for deployment
 
 ## Ice Box Features 🧊
+- [x] Mobile Friendly
 - [x] Users can add to following
 - [ ] Users can accept/reject friend request
 - [ ] Users instant messaging/inbox
