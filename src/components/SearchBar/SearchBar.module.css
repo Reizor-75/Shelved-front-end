@@ -35,6 +35,11 @@ form > *{
   margin-right: 8px;
 }
 
+@media screen and (max-width: 480px){
+  input.searchInput{
+    width: 200px;
+  }
+}
 
 @media screen and (max-width: 300px){
   input.searchInput{

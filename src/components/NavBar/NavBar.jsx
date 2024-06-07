@@ -18,7 +18,7 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
         <div className={styles.links}>        
           {user ?
             <div className={styles.userLinks}>
-              {/* <i className="fa-solid fa-circle-user"></i> */}
+              <i className="fa-solid fa-circle-user"></i>
               <div className={styles.userDropDown}>
                 <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
                 <NavLink to="/auth/change-password">Change Password</NavLink>
