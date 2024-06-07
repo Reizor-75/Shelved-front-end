@@ -15,11 +15,7 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
   return (
     <nav>
       <div className={styles.navContainer}>   
-        <div className={styles.links}>
-          <NavLink to="/books">
-            Books
-            {/* <i className="fa-solid fa-book" id={styles.bookIcon}></i> */}
-          </NavLink>
+        <div className={styles.links}>        
           {user ?
             <div className={styles.userLinks}>
               {/* <i className="fa-solid fa-circle-user"></i> */}
@@ -39,6 +35,10 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
               </div>
             </div>
           }
+          <NavLink to="/books">
+            Books
+            {/* <i className="fa-solid fa-book" id={styles.bookIcon}></i> */}
+          </NavLink>
         </div>
 
         <div className= {styles.mainBar}>

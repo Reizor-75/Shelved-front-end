@@ -3,7 +3,7 @@
   --main-contrast: #f29966;
   --main-font: #435944;
   --sub-font: #f27d72;
-  --shadow:2px 2px 4px #000000aa;
+  --shadow: 2px 2px 4px #000000aa;
   --font-xl: 2em;
   --font-l: 1.6em; 
   --font-m: 1.2em; 
@@ -21,6 +21,7 @@ body {
   box-sizing: border-box;
 
   margin: 0;
+  width: 100%;
   min-height: 100vh;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -51,7 +52,6 @@ nav{
   justify-content: center;
   margin: 0;
   width: 100%;
-  /* background-color: var(--main-contrast); */
   a,
   a:visited {
     color: var(--main-font);
@@ -80,19 +80,16 @@ button:hover{
 
 main{
   width: 60%;
-  min-width: 880px;
+  min-width: 860px;
   max-width: 1248px;
   color: var(--main-font);  
-  /* background-color: var(--background); */
   padding: 16px;
   border-radius: 0 0 8px 8px;
   margin-top: 8px;
 }
 
 @media screen and (max-width: 768px){
-  
   main{
     min-width:unset;
-    width: 100%;
   }
 }
