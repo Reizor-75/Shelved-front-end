@@ -91,5 +91,6 @@ main{
 @media screen and (max-width: 768px){
   main{
     min-width:unset;
+    width: 100%;
   }
 }
