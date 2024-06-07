@@ -58,3 +58,20 @@ select{
     height: 260px;
   }
 }
+
+@media screen and (max-width: 480px){
+  .card{
+    width: 162px;
+    height: 252px;
+  }
+
+  .cover{
+    width: 152px;
+    height: 242px;
+  }
+
+  .bookTitle{
+    width: 152px;
+    height: 242px;
+  }
+}

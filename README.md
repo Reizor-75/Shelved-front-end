@@ -1,7 +1,6 @@
 # <img src="./src/assets/Shelved_Logo_V6.svg" alt="Shelved Icon" width="30"/> Shelved - Front End
 
-<img src="./src/assets/Landing.png" alt="Landing Page" height="500"/>
-<img src="./src/assets/Mobile_catalog.png" alt="Landing Page" height="500"/>
+<img src="./src/assets/Landing.png" alt="Landing Page" height="450"/><img src="./src/assets/Mobile_catalog.png" alt="Landing Page" height="450"/>
 
 **Shelved** is a book review application made using React on the front end and JavaScript on the back end. Users come to **Shelved** to look into books they are interested in as well as books they've read before. User are encourage to rate and review books they've read to create discourse amongst all users.
 
