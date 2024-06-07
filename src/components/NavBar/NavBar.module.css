@@ -1,8 +1,6 @@
 .navContainer{
   width: 100%;
   color: var(--main-contrast);
-  font-size: var(--font-xl);
-  font-weight: 700;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -20,7 +18,8 @@
 
 .logoContainer{
   display: flex;
-  align-items: flex-end;
+  align-items: flex-end;  
+  font-size: var(--font-xl);
 }
 
 .logoImage{
@@ -36,7 +35,7 @@
 .links{
   display: flex;
   align-items: center;
-  font-size: var(--font-xs);
+  font-size: var(--font-s);
   i{    
     color: var(--main-font);
   }
@@ -52,36 +51,33 @@
   justify-content: right;
   padding: 8px;
   padding-bottom: 0;
-  border-radius: 8px;
-  font-size: var(--font-xs);
   i{    
     font-size: var(--font-l);
   }
 }
 
+.userDropDown{
+  display: none;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  a{
+    display: flex;
+    text-align: left;
+    padding: 8px;
+    width: 100px;
+  }
+}
+
 .userLinks:hover{
   .userDropDown{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    display: block;
+    position: absolute;
+    left: 10%;
     background-color: var(--main-contrast);
     a:hover{
       color: var(--sub-font);
       background-color: white;
     }
-  }
-}
-
-.userDropDown{
-  display: none;
-  position: absolute;
-  box-shadow: var(--shadow);
-  border-radius: 4px;
-  /* border: solid 2px var(--background  ) ; */
-  a{
-    text-align: right;
-    padding: 8px;
-    width: 120px;
   }
 }
 
@@ -91,7 +87,6 @@
     color: var(--main-font);
   }
 }
-
 
 @media screen and (max-width: 450px){
   .navContainer{
