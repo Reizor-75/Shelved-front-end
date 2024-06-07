@@ -79,11 +79,11 @@ button:hover{
 }
 
 main{
-  width: 60%;
+  width: 65%;
   min-width: 860px;
-  max-width: 1248px;
+  max-width: 1264px;
   color: var(--main-font);  
-  padding: 16px;
+  padding: 16px 0;
   border-radius: 0 0 8px 8px;
   margin-top: 8px;
 }
