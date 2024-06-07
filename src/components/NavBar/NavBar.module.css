@@ -50,9 +50,8 @@
   display: flex;
   justify-content: right;
   padding: 8px;
-  padding-bottom: 0;
   i{    
-    font-size: var(--font-l);
+    font-size: var(--font-xl);
   }
 }
 
