@@ -14,22 +14,15 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
   
   return (
     <nav>
-      <div className={styles.navContainer}>
-        <NavLink to="/">
-          <div className={styles.logoContainer}>
-            <img src={shelvedLogo} alt="Shelved Logo" className={styles.logoImage}/>
-            <div className={styles.logoTitle}>Shelved</div>
-          </div>
-        </NavLink>
-
-        <SearchBar handleSearch={ handleSearch }/>
-
+      <div className={styles.navContainer}>   
         <div className={styles.links}>
-          <NavLink to="/books"><i className="fa-solid fa-book" id={styles.bookIcon}></i></NavLink>
+          <NavLink to="/books">
+            Books
+            {/* <i className="fa-solid fa-book" id={styles.bookIcon}></i> */}
+          </NavLink>
           {user ?
             <div className={styles.userLinks}>
-                <i className="fa-solid fa-circle-user"></i>
-
+              {/* <i className="fa-solid fa-circle-user"></i> */}
               <div className={styles.userDropDown}>
                 <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
                 <NavLink to="/auth/change-password">Change Password</NavLink>
@@ -48,24 +41,34 @@ const NavBar = ({ user, handleLogout, handleSearch }) => {
           }
         </div>
 
-        <div className={styles.linksMobile}>
-          <div className={styles.userLinks}>
-            <i className="fa-solid fa-bars"></i>
-            {user ?
-              <div className={styles.userDropDown}>
-                <NavLink to="/books">Books</NavLink>
-                <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
-                <NavLink to="/auth/change-password">Change Password</NavLink>
-                <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
-              </div>
-            :
-              <div className={styles.userDropDown}>
-                <NavLink to="/books">Books</NavLink>
-                <NavLink to="/auth/login">Log In</NavLink>
-                <NavLink to="/auth/signup">Sign Up</NavLink>
-              </div>              
-            }
+        <div className= {styles.mainBar}>
+          <div className={styles.linksMobile}>
+            <div className={styles.userLinks}>
+              <i className="fa-solid fa-bars"></i>
+              {user ?
+                <div className={styles.userDropDown}>
+                  <NavLink to="/books">Books</NavLink>
+                  <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
+                  <NavLink to="/auth/change-password">Change Password</NavLink>
+                  <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
+                </div>
+              :
+                <div className={styles.userDropDown}>
+                  <NavLink to="/books">Books</NavLink>
+                  <NavLink to="/auth/login">Log In</NavLink>
+                  <NavLink to="/auth/signup">Sign Up</NavLink>
+                </div>              
+              }
+            </div>
           </div>
+          <NavLink to="/">
+          <div className={styles.logoContainer}>
+            <img src={shelvedLogo} alt="Shelved Logo" className={styles.logoImage}/>
+            <div className={styles.logoTitle}>Shelved</div>
+          </div>
+          </NavLink>
+
+          <SearchBar handleSearch={ handleSearch }/>
         </div>
       </div>
     </nav>
